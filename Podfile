@@ -8,5 +8,7 @@ target 'CustomOOH' do
   # Pods for CustomOOH
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'Firebase/Analytics'
+pod 'Firebase/Firestore'
 
 end

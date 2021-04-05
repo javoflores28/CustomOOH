@@ -2,80 +2,53 @@
 //  SignUpViewController.swift
 //  CustomOOH
 //
-//  Created by Javier Flores on 04/04/21.
+//  Created by Javier Flores on 05/04/21.
 //  Copyright © 2021 mx.itesm.A01651678. All rights reserved.
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+import FirebaseFirestore
 
-class SignUpViewController: UITableViewController {
+class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var usernameTextField: UITextField!
+    
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var signUpButton: UIButton!
+    
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpElements()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // Do any additional setup after loading the view.
+    }
+    
+    func setUpElements() {
+        
+        //Hide error label
+        errorLabel.alpha = 0
+        
+        //Style the elements
+        Utilities.styleTextField(usernameTextField)
+        
+        Utilities.styleTextField(emailTextField)
+        
+        Utilities.styleTextField(passwordTextField)
+        
+        //Utilities.styleFilledButton(signUpButton)
+    
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
+    
 
     /*
     // MARK: - Navigation
@@ -86,5 +59,102 @@ class SignUpViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //Check the fields and validate that the data is correct. If everything is correct, this method returns nil. Otherwise, it returns the error message.
+    func validateFields() -> String? {
+        
+        //Check that all fields are filled in
+        if usernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
+        {
+            
+            return "Por favor llena todos los campos"
+            
+        }
+        
+        //Check if the password is secure
+        let cleanPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if Utilities.isPasswordValid(cleanPassword)  == false {
+            //Password isn't secure enough
+            return "La contraseña debe contener por lo menos 8 caracteres,  1 caracter especial y 1 numero."
+        }
+           
+        
+        return nil
+        
+    }
+    
+    @IBAction func signUpTapped(_ sender: Any) {
+         
+        
+        //Validate the fields
+        let error = validateFields()
+        
+        if error != nil {
+            //Theres something wrong with the fields, shwo error message
+            showError(error!)
 
+        } else {
+            
+            //Create cleaned versions of the data
+            let username = usernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+           
+            //Create the user
+            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
+                //Check for errors
+                if err != nil {
+                    //There was an error when creating the user
+                    self.showError("Error al crear el usuario")
+                } else {
+                    
+                    //User was created successfuclly, now store the username
+                    let db = Firestore.firestore()
+                    
+                    db.collection("users").addDocument(data: ["username": username,"email":email, "uid":result!.user.uid]) { (error) in
+                        if error != nil {
+                            //Show error message
+                            self.showError("User data couldn't be saved")
+
+                        }
+                        
+                    }
+                    
+                    //Transition to next screen
+                    self.transitionToHome()
+             
+                }
+                
+           
+                
+            }
+                
+            
+        }
+        
+          
+    }
+    
+    func showError(_ message:String) {
+        
+        errorLabel.text = message
+        errorLabel.alpha = 1
+    }
+    
+    func transitionToHome() {
+        
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
+        
+        
+
+    }
+    
 }
