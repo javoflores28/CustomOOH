@@ -16,7 +16,6 @@
 		17404862261AA33C00DF957D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17404860261AA33C00DF957D /* LaunchScreen.storyboard */; };
 		17404871261AAB9D00DF957D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17404870261AAB9D00DF957D /* Extensions.swift */; };
 		17404873261AB89400DF957D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17404872261AB89400DF957D /* GoogleService-Info.plist */; };
-		178877CA261BCE670009268B /* SucessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178877C9261BCE670009268B /* SucessViewController.swift */; };
 		17B29988261B78D200BBDD52 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B29987261B78D200BBDD52 /* Utilities.swift */; };
 		17B2998B261B7EC100BBDD52 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B2998A261B7EC100BBDD52 /* SignUpViewController.swift */; };
 		17B2998D261B7FE600BBDD52 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B2998C261B7FE600BBDD52 /* LoginViewController.swift */; };
@@ -37,7 +36,6 @@
 		17404863261AA33C00DF957D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17404870261AAB9D00DF957D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		17404872261AB89400DF957D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		178877C9261BCE670009268B /* SucessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SucessViewController.swift; sourceTree = "<group>"; };
 		17B29987261B78D200BBDD52 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		17B2998A261B7EC100BBDD52 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		17B2998C261B7FE600BBDD52 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 				17B2998A261B7EC100BBDD52 /* SignUpViewController.swift */,
 				17B2998C261B7FE600BBDD52 /* LoginViewController.swift */,
 				17B2998E261B809200BBDD52 /* HomeViewController.swift */,
-				178877C9261BCE670009268B /* SucessViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -256,7 +253,6 @@
 				17B2998D261B7FE600BBDD52 /* LoginViewController.swift in Sources */,
 				17B29988261B78D200BBDD52 /* Utilities.swift in Sources */,
 				17404871261AAB9D00DF957D /* Extensions.swift in Sources */,
-				178877CA261BCE670009268B /* SucessViewController.swift in Sources */,
 				17E191FD261B91E600B4EA34 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
