@@ -79,9 +79,27 @@ class LoginViewController: UIViewController {
                 
             }
         }
+   
+    }
+    
+    
+    //signOut
+    /*
+    @IBAction func salir(_ sender: Any) {
         
-        
+        do {
+            try Auth.auth().signOut()
+          let mainViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.mainViewContorller) as? ViewController
+                   
+            self.view.window?.rootViewController = mainViewController
+            self.view.window?.makeKeyAndVisible()
+                   
+            
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
         
     }
+    */
     
 }
