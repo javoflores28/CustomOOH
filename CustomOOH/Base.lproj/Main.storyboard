@@ -126,27 +126,87 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bienvenido!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xns-6n-rks">
-                                <rect key="frame" x="134" y="322" width="107" height="23"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xUj-ld-oK6">
+                                <rect key="frame" x="1" y="0.0" width="373" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khk-xX-YMs">
-                                <rect key="frame" x="24" y="20" width="30" height="30"/>
+                            </mapView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburguesa" translatesAutoresizingMaskIntoConstraints="NO" id="naP-RR-sdC">
+                                <rect key="frame" x="22" y="20" width="54" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Salir"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DPF-ek-APL">
+                                <rect key="frame" x="24" y="23" width="52" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="salir:" destination="EAq-GR-5MD" eventType="touchUpInside" id="CB4-oG-WER"/>
+                                    <action selector="showMnu:" destination="EAq-GR-5MD" eventType="touchUpInside" id="RO0-7J-qBq"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BarraCatagoríasMapa" translatesAutoresizingMaskIntoConstraints="NO" id="4YC-i3-1t6">
+                                <rect key="frame" x="10" y="528" width="355" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Waf-Gq-wS4">
+                                <rect key="frame" x="0.0" y="0.0" width="265" height="667"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="slideMenu6" translatesAutoresizingMaskIntoConstraints="NO" id="Fy8-1A-mtQ">
+                                        <rect key="frame" x="0.0" y="8" width="257" height="659"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cerrarMenu" translatesAutoresizingMaskIntoConstraints="NO" id="KZs-Ni-O4S">
+                                        <rect key="frame" x="192" y="19" width="48" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bU-3c-9lK">
+                                        <rect key="frame" x="192" y="19" width="48" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="closeMenu:" destination="EAq-GR-5MD" eventType="touchUpInside" id="hEr-tl-QXW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khk-xX-YMs">
+                                        <rect key="frame" x="66" y="590" width="109" height="69"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Salir"/>
+                                        <connections>
+                                            <action selector="salir:" destination="EAq-GR-5MD" eventType="touchUpInside" id="CB4-oG-WER"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.089902631940000005" green="0.48271226880000001" blue="0.65100264549999998" alpha="0.19201144366197184" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="265" id="3hi-dq-Ywa"/>
+                                    <constraint firstItem="Fy8-1A-mtQ" firstAttribute="width" secondItem="Waf-Gq-wS4" secondAttribute="width" id="66s-ZJ-Fcc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="255" id="G0V-t7-aZa"/>
+                                    <constraint firstItem="Fy8-1A-mtQ" firstAttribute="height" secondItem="Waf-Gq-wS4" secondAttribute="height" id="LnV-X1-f7Q"/>
+                                    <constraint firstAttribute="height" constant="667" id="V05-My-AgG"/>
+                                    <constraint firstItem="Fy8-1A-mtQ" firstAttribute="centerX" secondItem="Waf-Gq-wS4" secondAttribute="centerX" id="X8V-lq-HIW"/>
+                                    <constraint firstItem="Fy8-1A-mtQ" firstAttribute="centerY" secondItem="Waf-Gq-wS4" secondAttribute="centerYWithinMargins" id="els-oe-6nU"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Waf-Gq-wS4" firstAttribute="leading" secondItem="fuW-b3-fKM" secondAttribute="leading" id="D0W-DJ-RdD"/>
+                            <constraint firstItem="Waf-Gq-wS4" firstAttribute="top" secondItem="fuW-b3-fKM" secondAttribute="top" id="uPj-Yi-1p4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fuW-b3-fKM"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="78q-dJ-fNh" appends="YES" id="vlc-Mi-72E"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="menuView" destination="Fy8-1A-mtQ" id="Sdl-I2-Wtn"/>
+                        <outlet property="sideView" destination="Waf-Gq-wS4" id="Wll-X9-TiL"/>
+                        <outlet property="viewConstraint" destination="D0W-DJ-RdD" id="2hc-Wn-LMP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyL-sr-Cgh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="78q-dJ-fNh">
+                    <connections>
+                        <action selector="panPerformed:" destination="EAq-GR-5MD" id="An8-aR-jjt"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2044" y="-36.431784107946029"/>
         </scene>
@@ -274,12 +334,16 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8gQ-Jh-hc2"/>
+        <segue reference="ABG-7a-xiR"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="BarraCatagoríasMapa" width="1242" height="387"/>
         <image name="InicarSesion" width="1242" height="2208"/>
         <image name="Main" width="1242" height="2208"/>
         <image name="Registrarse" width="1242" height="2208"/>
         <image name="Registro_exitoso" width="1242" height="2208"/>
+        <image name="cerrarMenu" width="101" height="84"/>
+        <image name="hamburguesa" width="181" height="181"/>
+        <image name="slideMenu6" width="512" height="1098"/>
     </resources>
 </document>
