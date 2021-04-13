@@ -16,6 +16,22 @@ class CategoriasViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    //Botón para regresar al menú del controlador del HomeViewController
+    @IBAction func regresarMenu(_ sender: Any) {
+        let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+                             
+            //self.view.window?.rootViewController = homeViewController
+            //self.view.window?.makeKeyAndVisible()
+        
+            self.present(homeViewController!, animated: false, completion: {
+                homeViewController?.viewConstraint.constant = 0
+                homeViewController?.view.layoutIfNeeded()
+        
+            })
+    
+    }
+    
 
     /*
     // MARK: - Navigation

@@ -121,7 +121,7 @@
         <!--Home View Controller-->
         <scene sceneID="PGM-x4-KYh">
             <objects>
-                <viewController storyboardIdentifier="HomeMap" id="EAq-GR-5MD" customClass="HomeViewController" customModule="CustomOOH" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeMap" modalPresentationStyle="fullScreen" id="EAq-GR-5MD" customClass="HomeViewController" customModule="CustomOOH" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JI4-LR-JYC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,18 +131,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburguesa" translatesAutoresizingMaskIntoConstraints="NO" id="naP-RR-sdC">
-                                <rect key="frame" x="22" y="20" width="54" height="60"/>
+                                <rect key="frame" x="16" y="35" width="54" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DPF-ek-APL">
-                                <rect key="frame" x="24" y="23" width="52" height="55"/>
+                                <rect key="frame" x="18" y="38" width="52" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="showMnu:" destination="EAq-GR-5MD" eventType="touchUpInside" id="RO0-7J-qBq"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BarraCatagoríasMapa" translatesAutoresizingMaskIntoConstraints="NO" id="4YC-i3-1t6">
-                                <rect key="frame" x="10" y="528" width="355" height="170"/>
+                                <rect key="frame" x="10" y="560" width="355" height="107"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Waf-Gq-wS4">
@@ -170,6 +170,29 @@
                                             <action selector="salir:" destination="EAq-GR-5MD" eventType="touchUpInside" id="CB4-oG-WER"/>
                                         </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CATEGORIAS" translatesAutoresizingMaskIntoConstraints="NO" id="HSA-mV-Ak5">
+                                        <rect key="frame" x="-3" y="266" width="263" height="135"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoSinTexto" translatesAutoresizingMaskIntoConstraints="NO" id="OMW-4k-onP">
+                                        <rect key="frame" x="33" y="8" width="175" height="98"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hola..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZX-81-3ZR">
+                                        <rect key="frame" x="12" y="94" width="222" height="69"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" red="0.063165925440000006" green="0.38123404979999997" blue="0.52550899979999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="highlightedColor" red="0.086798585950000007" green="0.39713406559999997" blue="0.53335154060000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VA0-Lt-fMq">
+                                        <rect key="frame" x="8" y="305" width="232" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="CATEGORIAS"/>
+                                        <connections>
+                                            <segue destination="vf4-Oe-Vf4" kind="show" id="FCf-ic-GdZ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.089902631940000005" green="0.48271226880000001" blue="0.65100264549999998" alpha="0.19201144366197184" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -195,8 +218,10 @@
                             <outletCollection property="gestureRecognizers" destination="78q-dJ-fNh" appends="YES" id="vlc-Mi-72E"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="6um-CD-eOT"/>
                     <connections>
                         <outlet property="menuView" destination="Fy8-1A-mtQ" id="Sdl-I2-Wtn"/>
+                        <outlet property="nombreUsuario" destination="lZX-81-3ZR" id="Xk0-T1-gtB"/>
                         <outlet property="sideView" destination="Waf-Gq-wS4" id="Wll-X9-TiL"/>
                         <outlet property="viewConstraint" destination="D0W-DJ-RdD" id="2hc-Wn-LMP"/>
                     </connections>
@@ -284,6 +309,43 @@
             </objects>
             <point key="canvasLocation" x="1209" y="-707"/>
         </scene>
+        <!--Categorias View Controller-->
+        <scene sceneID="vqq-Ot-IXz">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="vf4-Oe-Vf4" customClass="CategoriasViewController" customModule="CustomOOH" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kCr-up-h4C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CATEGORÍAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kt-eG-Ol0">
+                                <rect key="frame" x="136" y="42" width="103" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VIEW_CATEGORIAS" translatesAutoresizingMaskIntoConstraints="NO" id="ISh-tp-AId">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsX-Tm-D0e">
+                                <rect key="frame" x="8" y="22" width="62" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="regresarMenu:" destination="vf4-Oe-Vf4" eventType="touchUpInside" id="JwJ-cO-piW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6MZ-8x-Ojd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="n9a-Eu-OTT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Afl-vg-35l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3000.8000000000002" y="-36.431784107946029"/>
+        </scene>
         <!--Success View Controller-->
         <scene sceneID="nr9-fZ-atP">
             <objects>
@@ -334,14 +396,17 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ABG-7a-xiR"/>
+        <segue reference="xi2-lN-cVt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BarraCatagoríasMapa" width="1242" height="387"/>
+        <image name="CATEGORIAS" width="749" height="213"/>
         <image name="InicarSesion" width="1242" height="2208"/>
+        <image name="LogoSinTexto" width="986" height="1209"/>
         <image name="Main" width="1242" height="2208"/>
         <image name="Registrarse" width="1242" height="2208"/>
         <image name="Registro_exitoso" width="1242" height="2208"/>
+        <image name="VIEW_CATEGORIAS" width="1242" height="2208"/>
         <image name="cerrarMenu" width="101" height="84"/>
         <image name="hamburguesa" width="181" height="181"/>
         <image name="slideMenu6" width="512" height="1098"/>

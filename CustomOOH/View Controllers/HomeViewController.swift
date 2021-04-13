@@ -18,7 +18,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var sideView: UIView!
     
-  
+    @IBOutlet weak var nombreUsuario: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,8 +32,11 @@ class HomeViewController: UIViewController {
         //sideView.layer.shadowColor = UIColor.black.cgColor
         //sideView.layer.shadowOpacity = 10
         //sideView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        
-
+        if Auth.auth().currentUser != nil {
+            if let name = Auth.auth().currentUser?.email {
+            nombreUsuario.text = "Hola 🤗\n" + name
+            }
+        }
         
         viewConstraint.constant = -270
        
