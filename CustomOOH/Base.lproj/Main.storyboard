@@ -171,7 +171,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CATEGORIAS" translatesAutoresizingMaskIntoConstraints="NO" id="HSA-mV-Ak5">
-                                        <rect key="frame" x="-3" y="266" width="263" height="135"/>
+                                        <rect key="frame" x="-3" y="202" width="263" height="135"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoSinTexto" translatesAutoresizingMaskIntoConstraints="NO" id="OMW-4k-onP">
@@ -186,11 +186,25 @@
                                         <color key="highlightedColor" red="0.086798585950000007" green="0.39713406559999997" blue="0.53335154060000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VA0-Lt-fMq">
-                                        <rect key="frame" x="8" y="305" width="232" height="43"/>
+                                        <rect key="frame" x="8" y="245" width="232" height="43"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="CATEGORIAS"/>
                                         <connections>
                                             <segue destination="vf4-Oe-Vf4" kind="show" id="FCf-ic-GdZ"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AcercaDe" translatesAutoresizingMaskIntoConstraints="NO" id="pjP-aa-aMI">
+                                        <rect key="frame" x="41" y="334" width="165" height="83"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtw-yr-0is">
+                                        <rect key="frame" x="78" y="334" width="90" height="83"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Acerca">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="rDd-a8-svc" kind="show" id="ccM-Sg-jZo"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -308,6 +322,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBd-80-vW4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1209" y="-707"/>
+        </scene>
+        <!--Acerca De View Controller-->
+        <scene sceneID="6DR-YP-HSJ">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="rDd-a8-svc" customClass="AcercaDeViewController" customModule="CustomOOH" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kaB-X1-5eh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AcercaDePagina" translatesAutoresizingMaskIntoConstraints="NO" id="Pri-Aj-vyo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ez6-99-lgS">
+                                <rect key="frame" x="12" y="20" width="51" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Regresar">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="regresar:" destination="rDd-a8-svc" eventType="touchUpInside" id="SkG-3o-YF4"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Santi" translatesAutoresizingMaskIntoConstraints="NO" id="V87-nw-ZQc">
+                                <rect key="frame" x="6" y="656" width="150" height="163"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Javier" translatesAutoresizingMaskIntoConstraints="NO" id="ng2-ko-ULD">
+                                <rect key="frame" x="217" y="651" width="159" height="163"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="r4K-1Z-l4b"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Afa-5N-o85"/>
+                    <connections>
+                        <outlet property="javi" destination="ng2-ko-ULD" id="5xA-2e-Of8"/>
+                        <outlet property="santi" destination="V87-nw-ZQc" id="NYa-q0-RjC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2DO-gm-PB2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3000.8000000000002" y="-837.03148425787117"/>
         </scene>
         <!--Categorias View Controller-->
         <scene sceneID="vqq-Ot-IXz">
@@ -443,13 +502,17 @@
         <segue reference="ABG-7a-xiR"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="AcercaDe" width="181" height="177"/>
+        <image name="AcercaDePagina" width="1242" height="2208"/>
         <image name="BarraCatagoríasMapa" width="1242" height="387"/>
         <image name="CATEGORIAS" width="749" height="213"/>
         <image name="InicarSesion" width="1242" height="2208"/>
+        <image name="Javier" width="496" height="490"/>
         <image name="LogoSinTexto" width="986" height="1209"/>
         <image name="Main" width="1242" height="2208"/>
         <image name="Registrarse" width="1242" height="2208"/>
         <image name="Registro_exitoso" width="1242" height="2208"/>
+        <image name="Santi" width="501" height="511"/>
         <image name="TextoLogo" width="955" height="135"/>
         <image name="VIEW_CATEGORIAS" width="1242" height="2208"/>
         <image name="cerrarMenu" width="101" height="84"/>
