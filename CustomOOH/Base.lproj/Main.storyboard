@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uy1-wo-Tfx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5oV-Rc-8K3">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Main" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="CustomOOH" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="CustomOOH" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -392,11 +392,55 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7s-QC-8Iu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-639" y="-35"/>
+            <point key="canvasLocation" x="-394" y="-36"/>
+        </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="aeh-8l-lLW">
+            <objects>
+                <viewController id="5oV-Rc-8K3" customClass="SplashViewController" customModule="CustomOOH" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="61B-2l-WLT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rango3" id="555-z4-uOL">
+                                <rect key="frame" x="-28" y="267" width="430" height="427"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rango2" id="nA4-ND-gdo">
+                                <rect key="frame" x="13" y="340" width="345" height="284"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rango1" translatesAutoresizingMaskIntoConstraints="NO" id="m8E-lp-yKB">
+                                <rect key="frame" x="62" y="397" width="248" height="161"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoSinTexto" translatesAutoresizingMaskIntoConstraints="NO" id="D4x-Gr-HSk">
+                                <rect key="frame" x="-45" y="93" width="464" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TextoLogo" id="0oo-5c-SF5">
+                                <rect key="frame" x="25" y="-116" width="325" height="189"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.28871840240000002" green="0.5769317746" blue="0.74512088300000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="a7e-0X-Pzd"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="D4x-Gr-HSk" id="aA8-ua-Nik"/>
+                        <outlet property="rango1" destination="m8E-lp-yKB" id="0Gh-Og-9be"/>
+                        <outlet property="rango2" destination="nA4-ND-gdo" id="2aB-0D-FZP"/>
+                        <outlet property="rango3" destination="555-z4-uOL" id="LUG-at-C35"/>
+                        <outlet property="texto" destination="0oo-5c-SF5" id="D9d-R3-oYB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EZa-aN-QV5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1209" y="-36"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xi2-lN-cVt"/>
+        <segue reference="ABG-7a-xiR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BarraCatagoríasMapa" width="1242" height="387"/>
@@ -406,9 +450,13 @@
         <image name="Main" width="1242" height="2208"/>
         <image name="Registrarse" width="1242" height="2208"/>
         <image name="Registro_exitoso" width="1242" height="2208"/>
+        <image name="TextoLogo" width="955" height="135"/>
         <image name="VIEW_CATEGORIAS" width="1242" height="2208"/>
         <image name="cerrarMenu" width="101" height="84"/>
         <image name="hamburguesa" width="181" height="181"/>
+        <image name="rango1" width="560" height="562"/>
+        <image name="rango2" width="968" height="972"/>
+        <image name="rango3" width="1242" height="1380"/>
         <image name="slideMenu6" width="512" height="1098"/>
     </resources>
 </document>

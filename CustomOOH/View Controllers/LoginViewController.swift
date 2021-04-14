@@ -75,6 +75,8 @@ class LoginViewController: UIViewController {
                        
                 self.view.window?.rootViewController = homeViewController
                 self.view.window?.makeKeyAndVisible()
+                
+                
                        
                 
             }
