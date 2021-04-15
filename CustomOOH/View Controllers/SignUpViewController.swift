@@ -157,4 +157,12 @@ class SignUpViewController: UIViewController {
 
     }
     
+    
+    @IBAction func regresar(_ sender: Any) {
+        _ = navigationController?.popViewController(animated: true)
+
+    }
+    
+    
+    
 }

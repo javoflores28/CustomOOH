@@ -1,14 +1,14 @@
 //
-//  PaletasCollectionViewCell.swift
+//  MedianosCollectionViewCell.swift
 //  CustomOOH
 //
-//  Created by Javier Flores on 14/04/21.
+//  Created by Javier Flores on 15/04/21.
 //  Copyright © 2021 mx.itesm.A01651678. All rights reserved.
 //
 
 import UIKit
 
-class PaletasCollectionViewCell: UICollectionViewCell {
+class MedianosCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var nombreCartel: UILabel!
@@ -21,6 +21,7 @@ class PaletasCollectionViewCell: UICollectionViewCell {
     public var estado: String!
     public var direccion: String!
     public var detalles: String!
-    public var coordenadasX: String!
-    public var coordenadasY: String!
+    //public var coordenadasX: String!
+    //public var coordenadasY: String!
+    
 }

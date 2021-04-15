@@ -19,6 +19,7 @@ class CategoriasViewController: UIViewController {
     
     //Botón para regresar al menú del controlador del HomeViewController
     @IBAction func regresarMenu(_ sender: Any) {
+        
         let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
                              
             //self.view.window?.rootViewController = homeViewController

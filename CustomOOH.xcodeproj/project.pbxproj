@@ -22,6 +22,9 @@
 		17B2998B261B7EC100BBDD52 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B2998A261B7EC100BBDD52 /* SignUpViewController.swift */; };
 		17B2998D261B7FE600BBDD52 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B2998C261B7FE600BBDD52 /* LoginViewController.swift */; };
 		17B2998F261B809200BBDD52 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B2998E261B809200BBDD52 /* HomeViewController.swift */; };
+		17C74C7B2628A490000A4146 /* MedianosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C74C7A2628A490000A4146 /* MedianosViewController.swift */; };
+		17C74C7D2628A7AD000A4146 /* MedianosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C74C7C2628A7AD000A4146 /* MedianosCollectionViewCell.swift */; };
+		17C74C7F2628B176000A4146 /* SearchBarCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C74C7E2628B176000A4146 /* SearchBarCollectionReusableView.swift */; };
 		17D100012627F1AE0004A175 /* ParserCartelesJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D100002627F1AE0004A175 /* ParserCartelesJSON.swift */; };
 		17D10003262800B30004A175 /* MediaParserJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D10002262800B30004A175 /* MediaParserJSON.swift */; };
 		17D1FFEF26268F040004A175 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1FFEE26268F040004A175 /* SplashViewController.swift */; };
@@ -53,6 +56,9 @@
 		17B2998A261B7EC100BBDD52 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		17B2998C261B7FE600BBDD52 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		17B2998E261B809200BBDD52 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		17C74C7A2628A490000A4146 /* MedianosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedianosViewController.swift; sourceTree = "<group>"; };
+		17C74C7C2628A7AD000A4146 /* MedianosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedianosCollectionViewCell.swift; sourceTree = "<group>"; };
+		17C74C7E2628B176000A4146 /* SearchBarCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCollectionReusableView.swift; sourceTree = "<group>"; };
 		17D100002627F1AE0004A175 /* ParserCartelesJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserCartelesJSON.swift; sourceTree = "<group>"; };
 		17D10002262800B30004A175 /* MediaParserJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaParserJSON.swift; sourceTree = "<group>"; };
 		17D1FFEE26268F040004A175 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +90,25 @@
 				07A606327ECB7DC072DD6AF2 /* Pods_CustomOOH.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		173AC4C926282B16004C3EF5 /* Paletas */ = {
+			isa = PBXGroup;
+			children = (
+				17D1FFFA2627C9B60004A175 /* PaletasViewController.swift */,
+				17D1FFFC2627CA340004A175 /* PaletasCollectionViewCell.swift */,
+				173AC4C626281A0A004C3EF5 /* SearchBarPaletas.swift */,
+			);
+			path = Paletas;
+			sourceTree = "<group>";
+		};
+		173AC4CA26282B8B004C3EF5 /* Fetch JSON */ = {
+			isa = PBXGroup;
+			children = (
+				17D100002627F1AE0004A175 /* ParserCartelesJSON.swift */,
+				17D10002262800B30004A175 /* MediaParserJSON.swift */,
+			);
+			path = "Fetch JSON";
 			sourceTree = "<group>";
 		};
 		17404849261AA33A00DF957D = {
@@ -124,6 +149,9 @@
 		1740486F261AAB4800DF957D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				17C74C792628A26F000A4146 /* MedianosFormatos */,
+				173AC4CA26282B8B004C3EF5 /* Fetch JSON */,
+				173AC4C926282B16004C3EF5 /* Paletas */,
 				17404859261AA33A00DF957D /* ViewController.swift */,
 				17B2998A261B7EC100BBDD52 /* SignUpViewController.swift */,
 				17B2998C261B7FE600BBDD52 /* LoginViewController.swift */,
@@ -133,12 +161,7 @@
 				17A852F2261C3DAF00C64292 /* SuccessViewController.swift */,
 				17D1FFEE26268F040004A175 /* SplashViewController.swift */,
 				17D1FFF026276F900004A175 /* AcercaDeViewController.swift */,
-				17D1FFFA2627C9B60004A175 /* PaletasViewController.swift */,
-				17D1FFFC2627CA340004A175 /* PaletasCollectionViewCell.swift */,
 				17D1FFFE2627DFC40004A175 /* DetallesCartelViewController.swift */,
-				17D100002627F1AE0004A175 /* ParserCartelesJSON.swift */,
-				17D10002262800B30004A175 /* MediaParserJSON.swift */,
-				173AC4C626281A0A004C3EF5 /* SearchBarPaletas.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -151,6 +174,16 @@
 			);
 			name = Helpers;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		17C74C792628A26F000A4146 /* MedianosFormatos */ = {
+			isa = PBXGroup;
+			children = (
+				17C74C7A2628A490000A4146 /* MedianosViewController.swift */,
+				17C74C7C2628A7AD000A4146 /* MedianosCollectionViewCell.swift */,
+				17C74C7E2628B176000A4146 /* SearchBarCollectionReusableView.swift */,
+			);
+			path = MedianosFormatos;
 			sourceTree = "<group>";
 		};
 		94EED0B032C094D8CC941102 /* Pods */ = {
@@ -279,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17C74C7F2628B176000A4146 /* SearchBarCollectionReusableView.swift in Sources */,
 				1740485A261AA33A00DF957D /* ViewController.swift in Sources */,
 				17D1FFFF2627DFC40004A175 /* DetallesCartelViewController.swift in Sources */,
 				17B2998B261B7EC100BBDD52 /* SignUpViewController.swift in Sources */,
@@ -289,6 +323,7 @@
 				17B2998F261B809200BBDD52 /* HomeViewController.swift in Sources */,
 				17404858261AA33A00DF957D /* SceneDelegate.swift in Sources */,
 				17D1FFEF26268F040004A175 /* SplashViewController.swift in Sources */,
+				17C74C7B2628A490000A4146 /* MedianosViewController.swift in Sources */,
 				173AC4C726281A0B004C3EF5 /* SearchBarPaletas.swift in Sources */,
 				17B2998D261B7FE600BBDD52 /* LoginViewController.swift in Sources */,
 				17D7E2DE2623FD790016CD7F /* MenuViewController.swift in Sources */,
@@ -298,6 +333,7 @@
 				17404871261AAB9D00DF957D /* Extensions.swift in Sources */,
 				17A852F3261C3DAF00C64292 /* SuccessViewController.swift in Sources */,
 				17E191FD261B91E600B4EA34 /* Constants.swift in Sources */,
+				17C74C7D2628A7AD000A4146 /* MedianosCollectionViewCell.swift in Sources */,
 				17D1FFFB2627C9B60004A175 /* PaletasViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

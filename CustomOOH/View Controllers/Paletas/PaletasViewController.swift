@@ -37,7 +37,7 @@ class PaletasViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url: URL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data/carteles.json")!
+        let url: URL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data/paletas.json")!
         var request: URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
         
@@ -95,7 +95,7 @@ class PaletasViewController: UIViewController, UICollectionViewDataSource, UICol
           var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? PaletasCollectionViewCell
         */
         
-        let cell: PaletasCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PaletasCollectionViewCell
+        let cell: PaletasCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellPaletas", for: indexPath) as! PaletasCollectionViewCell
         
         cell.nombreCartel.text = self.carteles[indexPath.item].nombre
         cell.detalles = self.carteles[indexPath.item].detalles
@@ -161,6 +161,14 @@ class PaletasViewController: UIViewController, UICollectionViewDataSource, UICol
         }
         self.collectionView.reloadData()
     }
+    
+    
+    
+    
+    @IBAction func regresar(_ sender: Any) {
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 

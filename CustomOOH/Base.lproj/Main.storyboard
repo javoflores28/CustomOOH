@@ -100,7 +100,7 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="xi2-lN-cVt"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="nAj-bL-df5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -304,7 +304,7 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="Wg1-qv-Xf4"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="lUw-KY-GgE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -391,7 +391,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsX-Tm-D0e">
                                 <rect key="frame" x="8" y="22" width="62" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="regresarMenu:" destination="vf4-Oe-Vf4" eventType="touchUpInside" id="JwJ-cO-piW"/>
                                 </connections>
@@ -404,6 +406,16 @@
                                 </state>
                                 <connections>
                                     <segue destination="HkU-Fs-Dpa" kind="show" id="npp-8P-Q6N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HM5-Yb-9aT">
+                                <rect key="frame" x="43" y="258" width="277" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="MedianosFormatos">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="aLm-5X-Y66" kind="show" id="DIg-qE-5Z7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -421,7 +433,7 @@
             <objects>
                 <viewController storyboardIdentifier="paletasViewController" modalPresentationStyle="fullScreen" id="HkU-Fs-Dpa" customClass="PaletasViewController" customModule="CustomOOH" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a0n-z7-iCH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PaletasPantalla" translatesAutoresizingMaskIntoConstraints="NO" id="nGx-qm-k3t">
@@ -435,11 +447,11 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ukB-jH-Rko" kind="show" id="sna-Z7-YSp"/>
+                                    <action selector="regresar:" destination="HkU-Fs-Dpa" eventType="touchUpInside" id="YkD-e8-wnA"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FZP-tN-m36">
-                                <rect key="frame" x="16" y="103" width="343" height="564"/>
+                                <rect key="frame" x="16" y="103" width="343" height="544"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hgf-RA-Ujf">
@@ -449,7 +461,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="HuL-5s-58K" customClass="PaletasCollectionViewCell" customModule="CustomOOH" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellPaletas" id="HuL-5s-58K" customClass="PaletasCollectionViewCell" customModule="CustomOOH" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="115" width="154" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nuz-u5-WTT">
@@ -551,14 +563,151 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVs-x5-sMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4871.1999999999998" y="-36.431784107946029"/>
+            <point key="canvasLocation" x="4869.6000000000004" y="-36.431784107946029"/>
+        </scene>
+        <!--Medianos View Controller-->
+        <scene sceneID="7cv-p5-1pm">
+            <objects>
+                <viewController storyboardIdentifier="medianosViewController" modalPresentationStyle="fullScreen" id="aLm-5X-Y66" customClass="MedianosViewController" customModule="CustomOOH" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hU3-Zw-dXE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MedianosFormatoPantalla" translatesAutoresizingMaskIntoConstraints="NO" id="vez-Jd-IEa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="679"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zh8-C6-aWq">
+                                <rect key="frame" x="5" y="24" width="66" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Regresar">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="regresar:" destination="aLm-5X-Y66" eventType="touchUpInside" id="LEn-1T-oCo"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Dkf-Ku-RUN">
+                                <rect key="frame" x="16" y="103" width="343" height="544"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mtu-xZ-ngJ">
+                                    <size key="itemSize" width="152" height="128"/>
+                                    <size key="headerReferenceSize" width="50" height="115"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellMedianos" id="Bu6-V4-ZQE" customClass="MedianosCollectionViewCell" customModule="CustomOOH" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="115" width="152" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wsV-h3-DeV">
+                                            <rect key="frame" x="0.0" y="0.0" width="152" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ck8-DJ-dRG">
+                                                    <rect key="frame" x="6" y="25" width="139" height="97"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="97" id="SpD-w9-YDm"/>
+                                                        <constraint firstAttribute="width" constant="139" id="goo-eA-ojg"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Condición: 90%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47C-mg-TZg">
+                                                    <rect key="frame" x="8" y="92" width="137" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.021679166699999999" green="0.39693456890000001" blue="0.54119545219999998" alpha="0.59861905810000005" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="highlightedColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PALETA 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v19-fS-Wo2">
+                                                    <rect key="frame" x="5" y="7" width="87" height="17"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="OUG-H5-QFB"/>
+                                                        <constraint firstAttribute="width" constant="87" id="wWn-bY-9Ad"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="14/04/21" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6Y-n6-qrt">
+                                                    <rect key="frame" x="87" y="5" width="66" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="v19-fS-Wo2" secondAttribute="trailing" constant="62" id="F8m-R5-2iV"/>
+                                                <constraint firstAttribute="bottom" secondItem="ck8-DJ-dRG" secondAttribute="bottom" constant="6" id="GJ6-xe-Yei"/>
+                                                <constraint firstItem="ck8-DJ-dRG" firstAttribute="top" secondItem="v19-fS-Wo2" secondAttribute="bottom" constant="1" id="Hqf-rX-jJo"/>
+                                                <constraint firstAttribute="trailing" secondItem="ck8-DJ-dRG" secondAttribute="trailing" constant="7" id="RaX-Bf-g0R"/>
+                                                <constraint firstItem="v19-fS-Wo2" firstAttribute="top" secondItem="wsV-h3-DeV" secondAttribute="top" constant="7" id="dQW-Ks-L7A"/>
+                                                <constraint firstItem="v19-fS-Wo2" firstAttribute="leading" secondItem="wsV-h3-DeV" secondAttribute="leading" constant="5" id="gVr-T5-qhM"/>
+                                                <constraint firstItem="ck8-DJ-dRG" firstAttribute="leading" secondItem="wsV-h3-DeV" secondAttribute="leading" constant="6" id="hMS-uQ-LdA"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="0.089776881040000006" green="0.51375114919999998" blue="0.2234915197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="customSize" width="152" height="128"/>
+                                        <connections>
+                                            <outlet property="condicion" destination="47C-mg-TZg" id="TaT-GT-dti"/>
+                                            <outlet property="fechaUltRegistro" destination="b6Y-n6-qrt" id="pah-8W-MFz"/>
+                                            <outlet property="img" destination="ck8-DJ-dRG" id="0wi-Ro-Ws3"/>
+                                            <outlet property="nombreCartel" destination="v19-fS-Wo2" id="P6c-aQ-kMP"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="searchBarMedianos" id="JcQ-6q-tca" customClass="SearchBarCollectionReusableView" customModule="CustomOOH" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="115"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <searchBar clipsSubviews="YES" contentMode="redraw" fixedFrame="YES" placeholder="Ingresa el nombre" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5if-lk-ago">
+                                            <rect key="frame" x="0.0" y="13" width="343" height="56"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <scopeButtonTitles>
+                                                <string>Title</string>
+                                                <string>Title</string>
+                                            </scopeButtonTitles>
+                                            <connections>
+                                                <outlet property="delegate" destination="aLm-5X-Y66" id="xyW-I1-EzS"/>
+                                            </connections>
+                                        </searchBar>
+                                    </subviews>
+                                    <connections>
+                                        <outlet property="searchBarMedianos" destination="5if-lk-ago" id="Dm0-tz-8ee"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="aLm-5X-Y66" id="zhU-FJ-3KL"/>
+                                    <outlet property="delegate" destination="aLm-5X-Y66" id="fvz-E2-32b"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fRW-Ih-uax"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6XA-1o-Qz9"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Dkf-Ku-RUN" id="ixS-Zp-2QF"/>
+                        <segue destination="ysa-x3-UnV" kind="show" id="sIy-TH-2Tv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X8L-xT-ARF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4869.6000000000004" y="805.54722638680664"/>
         </scene>
         <!--Detalles Cartel View Controller-->
         <scene sceneID="xgR-BL-dZN">
             <objects>
                 <viewController storyboardIdentifier="DetallesCartelViewController" modalPresentationStyle="fullScreen" id="ysa-x3-UnV" customClass="DetallesCartelViewController" customModule="CustomOOH" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WWw-cQ-4Lq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="detallesCartel" translatesAutoresizingMaskIntoConstraints="NO" id="Qrt-ja-716">
@@ -613,8 +762,7 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="regresar:" destination="ysa-x3-UnV" eventType="touchUpInside" id="FJ2-Y1-f3o"/>
-                                    <segue destination="HkU-Fs-Dpa" kind="show" id="2ZU-0l-ffW"/>
+                                    <action selector="regresar:" destination="ysa-x3-UnV" eventType="touchUpInside" id="teR-lp-Bsq"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="detalles" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UO-at-dT2">
@@ -661,7 +809,7 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="8gQ-Jh-hc2"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="HnN-2a-0M9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -744,6 +892,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YTj-Ck-fFo">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="vf4-Oe-Vf4" kind="relationship" relationship="rootViewController" id="yKn-5d-Zig"/>
                     </connections>
@@ -755,9 +906,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="cCP-zf-uKA"/>
-        <segue reference="sna-Z7-YSp"/>
-        <segue reference="2ZU-0l-ffW"/>
-        <segue reference="ABG-7a-xiR"/>
+        <segue reference="HnN-2a-0M9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AcercaDe" width="181" height="177"/>
@@ -769,6 +918,7 @@
         <image name="Javier" width="496" height="490"/>
         <image name="LogoSinTexto" width="986" height="1209"/>
         <image name="Main" width="1242" height="2208"/>
+        <image name="MedianosFormatoPantalla" width="1242" height="2208"/>
         <image name="PaletasPantalla" width="1242" height="2208"/>
         <image name="Registrarse" width="1242" height="2208"/>
         <image name="Registro_exitoso" width="1242" height="2208"/>

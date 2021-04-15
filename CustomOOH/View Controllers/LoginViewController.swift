@@ -85,6 +85,15 @@ class LoginViewController: UIViewController {
     }
     
     
+    @IBAction func regresar(_ sender: Any) {
+        _ = navigationController?.popViewController(animated: true)
+
+    }
+    
+    
+    
+    
+    
     //signOut
     /*
     @IBAction func salir(_ sender: Any) {
