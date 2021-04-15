@@ -9,9 +9,12 @@
 import UIKit
 
 
-class PaletasViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class PaletasViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
+    
     
     private var carteles: [ParserCartelesJSON]! = []
+    
+    private var busquedaCarteles: [ParserCartelesJSON]! = []
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -59,6 +62,7 @@ class PaletasViewController: UIViewController, UICollectionViewDataSource, UICol
             do  {
                 let  jsonDecoder: JSONDecoder = JSONDecoder()
                 self.carteles = try jsonDecoder.decode([ParserCartelesJSON].self, from: carteles)
+                self.busquedaCarteles  = self.carteles
                 self.collectionView.reloadData()
                 
                 //print(self.carteles[0].nombre!)
@@ -117,7 +121,46 @@ class PaletasViewController: UIViewController, UICollectionViewDataSource, UICol
           self.navigationController?.pushViewController(vc!, animated: true)
           
       }
+    
+   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+     
+    let searchView: UICollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "searchBarPaletas", for: indexPath)
+        return searchView
+    }
+    
 
+    /*
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.carteles.removeAll()
+                         
+                    for item in self.busquedaCarteles {
+                        if (item.nombre.lowercased().contains(searchBar.text!.lowercased())) {
+                            self.carteles.append(item)
+                        }
+                    }
+                         
+                    if (searchBar.text!.isEmpty) {
+                        self.carteles = self.busquedaCarteles
+                    }
+                    self.collectionView.reloadData()
+    }
+   */
+
+     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.carteles.removeAll()
+             
+        for item in self.busquedaCarteles {
+            if (item.nombre.lowercased().contains(searchBar.text!.lowercased())) {
+                self.carteles.append(item)
+            }
+        }
+             
+        if (searchBar.text!.isEmpty) {
+            self.carteles = self.busquedaCarteles
+        }
+        self.collectionView.reloadData()
+    }
 }
 
 

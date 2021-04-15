@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		170E0D3912ECBA4B94524822 /* Pods_CustomOOH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A606327ECB7DC072DD6AF2 /* Pods_CustomOOH.framework */; };
+		173AC4C726281A0B004C3EF5 /* SearchBarPaletas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173AC4C626281A0A004C3EF5 /* SearchBarPaletas.swift */; };
 		17404856261AA33A00DF957D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17404855261AA33A00DF957D /* AppDelegate.swift */; };
 		17404858261AA33A00DF957D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17404857261AA33A00DF957D /* SceneDelegate.swift */; };
 		1740485A261AA33A00DF957D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17404859261AA33A00DF957D /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		055B1634D1146D2E0346E3E0 /* Pods-CustomOOH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomOOH.release.xcconfig"; path = "Target Support Files/Pods-CustomOOH/Pods-CustomOOH.release.xcconfig"; sourceTree = "<group>"; };
 		07A606327ECB7DC072DD6AF2 /* Pods_CustomOOH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomOOH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		173AC4C626281A0A004C3EF5 /* SearchBarPaletas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarPaletas.swift; sourceTree = "<group>"; };
 		17404852261AA33A00DF957D /* CustomOOH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomOOH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17404855261AA33A00DF957D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17404857261AA33A00DF957D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				17D1FFFE2627DFC40004A175 /* DetallesCartelViewController.swift */,
 				17D100002627F1AE0004A175 /* ParserCartelesJSON.swift */,
 				17D10002262800B30004A175 /* MediaParserJSON.swift */,
+				173AC4C626281A0A004C3EF5 /* SearchBarPaletas.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				17B2998F261B809200BBDD52 /* HomeViewController.swift in Sources */,
 				17404858261AA33A00DF957D /* SceneDelegate.swift in Sources */,
 				17D1FFEF26268F040004A175 /* SplashViewController.swift in Sources */,
+				173AC4C726281A0B004C3EF5 /* SearchBarPaletas.swift in Sources */,
 				17B2998D261B7FE600BBDD52 /* LoginViewController.swift in Sources */,
 				17D7E2DE2623FD790016CD7F /* MenuViewController.swift in Sources */,
 				17B29988261B78D200BBDD52 /* Utilities.swift in Sources */,
