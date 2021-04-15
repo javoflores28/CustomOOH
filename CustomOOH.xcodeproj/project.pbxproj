@@ -28,6 +28,9 @@
 		17C74C822628CEA7000A4146 /* MobiliarioUrbanoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C74C812628CEA6000A4146 /* MobiliarioUrbanoViewController.swift */; };
 		17C74C842628D092000A4146 /* MobiliarioUrbanoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C74C832628D092000A4146 /* MobiliarioUrbanoCollectionViewCell.swift */; };
 		17C74C862628D3EC000A4146 /* SearchBarUrbanos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C74C852628D3EC000A4146 /* SearchBarUrbanos.swift */; };
+		17C74C892628DC10000A4146 /* GrandesFormatosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C74C882628DC10000A4146 /* GrandesFormatosViewController.swift */; };
+		17C74C8D2628DC5F000A4146 /* SerachBarGrandes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C74C8C2628DC5F000A4146 /* SerachBarGrandes.swift */; };
+		17C74C8F2628DEBC000A4146 /* GrandesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C74C8E2628DEBC000A4146 /* GrandesCollectionViewCell.swift */; };
 		17D100012627F1AE0004A175 /* ParserCartelesJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D100002627F1AE0004A175 /* ParserCartelesJSON.swift */; };
 		17D10003262800B30004A175 /* MediaParserJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D10002262800B30004A175 /* MediaParserJSON.swift */; };
 		17D1FFEF26268F040004A175 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1FFEE26268F040004A175 /* SplashViewController.swift */; };
@@ -65,6 +68,9 @@
 		17C74C812628CEA6000A4146 /* MobiliarioUrbanoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobiliarioUrbanoViewController.swift; sourceTree = "<group>"; };
 		17C74C832628D092000A4146 /* MobiliarioUrbanoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobiliarioUrbanoCollectionViewCell.swift; sourceTree = "<group>"; };
 		17C74C852628D3EC000A4146 /* SearchBarUrbanos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarUrbanos.swift; sourceTree = "<group>"; };
+		17C74C882628DC10000A4146 /* GrandesFormatosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrandesFormatosViewController.swift; sourceTree = "<group>"; };
+		17C74C8C2628DC5F000A4146 /* SerachBarGrandes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerachBarGrandes.swift; sourceTree = "<group>"; };
+		17C74C8E2628DEBC000A4146 /* GrandesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrandesCollectionViewCell.swift; sourceTree = "<group>"; };
 		17D100002627F1AE0004A175 /* ParserCartelesJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserCartelesJSON.swift; sourceTree = "<group>"; };
 		17D10002262800B30004A175 /* MediaParserJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaParserJSON.swift; sourceTree = "<group>"; };
 		17D1FFEE26268F040004A175 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +213,9 @@
 		17C74C872628DBA7000A4146 /* GrandesFormatos */ = {
 			isa = PBXGroup;
 			children = (
+				17C74C882628DC10000A4146 /* GrandesFormatosViewController.swift */,
+				17C74C8C2628DC5F000A4146 /* SerachBarGrandes.swift */,
+				17C74C8E2628DEBC000A4146 /* GrandesCollectionViewCell.swift */,
 			);
 			path = GrandesFormatos;
 			sourceTree = "<group>";
@@ -340,8 +349,10 @@
 				17C74C7F2628B176000A4146 /* SearchBarCollectionReusableView.swift in Sources */,
 				1740485A261AA33A00DF957D /* ViewController.swift in Sources */,
 				17D1FFFF2627DFC40004A175 /* DetallesCartelViewController.swift in Sources */,
+				17C74C8F2628DEBC000A4146 /* GrandesCollectionViewCell.swift in Sources */,
 				17B2998B261B7EC100BBDD52 /* SignUpViewController.swift in Sources */,
 				17D7E2DC2623FD0E0016CD7F /* CategoriasViewController.swift in Sources */,
+				17C74C8D2628DC5F000A4146 /* SerachBarGrandes.swift in Sources */,
 				17404856261AA33A00DF957D /* AppDelegate.swift in Sources */,
 				17D10003262800B30004A175 /* MediaParserJSON.swift in Sources */,
 				17D1FFF126276F900004A175 /* AcercaDeViewController.swift in Sources */,
@@ -357,6 +368,7 @@
 				17D1FFFD2627CA350004A175 /* PaletasCollectionViewCell.swift in Sources */,
 				17D100012627F1AE0004A175 /* ParserCartelesJSON.swift in Sources */,
 				17404871261AAB9D00DF957D /* Extensions.swift in Sources */,
+				17C74C892628DC10000A4146 /* GrandesFormatosViewController.swift in Sources */,
 				17A852F3261C3DAF00C64292 /* SuccessViewController.swift in Sources */,
 				17C74C842628D092000A4146 /* MobiliarioUrbanoCollectionViewCell.swift in Sources */,
 				17C74C862628D3EC000A4146 /* SearchBarUrbanos.swift in Sources */,
