@@ -21,8 +21,13 @@
 		17B2998B261B7EC100BBDD52 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B2998A261B7EC100BBDD52 /* SignUpViewController.swift */; };
 		17B2998D261B7FE600BBDD52 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B2998C261B7FE600BBDD52 /* LoginViewController.swift */; };
 		17B2998F261B809200BBDD52 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B2998E261B809200BBDD52 /* HomeViewController.swift */; };
+		17D100012627F1AE0004A175 /* ParserCartelesJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D100002627F1AE0004A175 /* ParserCartelesJSON.swift */; };
+		17D10003262800B30004A175 /* MediaParserJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D10002262800B30004A175 /* MediaParserJSON.swift */; };
 		17D1FFEF26268F040004A175 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1FFEE26268F040004A175 /* SplashViewController.swift */; };
 		17D1FFF126276F900004A175 /* AcercaDeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1FFF026276F900004A175 /* AcercaDeViewController.swift */; };
+		17D1FFFB2627C9B60004A175 /* PaletasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1FFFA2627C9B60004A175 /* PaletasViewController.swift */; };
+		17D1FFFD2627CA350004A175 /* PaletasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1FFFC2627CA340004A175 /* PaletasCollectionViewCell.swift */; };
+		17D1FFFF2627DFC40004A175 /* DetallesCartelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1FFFE2627DFC40004A175 /* DetallesCartelViewController.swift */; };
 		17D7E2DC2623FD0E0016CD7F /* CategoriasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D7E2DB2623FD0E0016CD7F /* CategoriasViewController.swift */; };
 		17D7E2DE2623FD790016CD7F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D7E2DD2623FD790016CD7F /* MenuViewController.swift */; };
 		17E191FD261B91E600B4EA34 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E191FC261B91E600B4EA34 /* Constants.swift */; };
@@ -46,8 +51,13 @@
 		17B2998A261B7EC100BBDD52 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		17B2998C261B7FE600BBDD52 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		17B2998E261B809200BBDD52 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		17D100002627F1AE0004A175 /* ParserCartelesJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserCartelesJSON.swift; sourceTree = "<group>"; };
+		17D10002262800B30004A175 /* MediaParserJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaParserJSON.swift; sourceTree = "<group>"; };
 		17D1FFEE26268F040004A175 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		17D1FFF026276F900004A175 /* AcercaDeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcercaDeViewController.swift; sourceTree = "<group>"; };
+		17D1FFFA2627C9B60004A175 /* PaletasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletasViewController.swift; sourceTree = "<group>"; };
+		17D1FFFC2627CA340004A175 /* PaletasCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletasCollectionViewCell.swift; sourceTree = "<group>"; };
+		17D1FFFE2627DFC40004A175 /* DetallesCartelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallesCartelViewController.swift; sourceTree = "<group>"; };
 		17D7E2DB2623FD0E0016CD7F /* CategoriasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriasViewController.swift; sourceTree = "<group>"; };
 		17D7E2DD2623FD790016CD7F /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		17E191FC261B91E600B4EA34 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -121,6 +131,11 @@
 				17A852F2261C3DAF00C64292 /* SuccessViewController.swift */,
 				17D1FFEE26268F040004A175 /* SplashViewController.swift */,
 				17D1FFF026276F900004A175 /* AcercaDeViewController.swift */,
+				17D1FFFA2627C9B60004A175 /* PaletasViewController.swift */,
+				17D1FFFC2627CA340004A175 /* PaletasCollectionViewCell.swift */,
+				17D1FFFE2627DFC40004A175 /* DetallesCartelViewController.swift */,
+				17D100002627F1AE0004A175 /* ParserCartelesJSON.swift */,
+				17D10002262800B30004A175 /* MediaParserJSON.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -262,9 +277,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1740485A261AA33A00DF957D /* ViewController.swift in Sources */,
+				17D1FFFF2627DFC40004A175 /* DetallesCartelViewController.swift in Sources */,
 				17B2998B261B7EC100BBDD52 /* SignUpViewController.swift in Sources */,
 				17D7E2DC2623FD0E0016CD7F /* CategoriasViewController.swift in Sources */,
 				17404856261AA33A00DF957D /* AppDelegate.swift in Sources */,
+				17D10003262800B30004A175 /* MediaParserJSON.swift in Sources */,
 				17D1FFF126276F900004A175 /* AcercaDeViewController.swift in Sources */,
 				17B2998F261B809200BBDD52 /* HomeViewController.swift in Sources */,
 				17404858261AA33A00DF957D /* SceneDelegate.swift in Sources */,
@@ -272,9 +289,12 @@
 				17B2998D261B7FE600BBDD52 /* LoginViewController.swift in Sources */,
 				17D7E2DE2623FD790016CD7F /* MenuViewController.swift in Sources */,
 				17B29988261B78D200BBDD52 /* Utilities.swift in Sources */,
+				17D1FFFD2627CA350004A175 /* PaletasCollectionViewCell.swift in Sources */,
+				17D100012627F1AE0004A175 /* ParserCartelesJSON.swift in Sources */,
 				17404871261AAB9D00DF957D /* Extensions.swift in Sources */,
 				17A852F3261C3DAF00C64292 /* SuccessViewController.swift in Sources */,
 				17E191FD261B91E600B4EA34 /* Constants.swift in Sources */,
+				17D1FFFB2627C9B60004A175 /* PaletasViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

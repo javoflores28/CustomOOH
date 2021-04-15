@@ -15,5 +15,8 @@ struct  Constants {
         static let homeViewController = "HomeMap"
         static let successViewController = "registro_correcto"
         static let mainViewContorller = "Main"
+        static let categoriasViewContorller = "categorias"
+         static let paletasViewController = "paletasViewController"
     }
 }
+
