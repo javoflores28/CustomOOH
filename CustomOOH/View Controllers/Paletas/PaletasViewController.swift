@@ -101,6 +101,26 @@ class PaletasViewController: UIViewController, UICollectionViewDataSource, UICol
         cell.detalles = self.carteles[indexPath.item].detalles
         
         
+        //cell.condicion.text = self.carteles[indexPath.item].revisiones[0].condicion
+        cell.condicion.text = "Condición " + self.carteles[indexPath.item].condicion
+        cell.fechaUltRegistro.text = self.carteles[indexPath.item].revisiones[0].fecha_revision
+        
+        
+        //Coloar imagenes del JSON
+        if let imageURL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data" + carteles[indexPath.item].media[0].url) {
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: imageURL)
+                if let data = data {
+                    let image = UIImage(data: data)
+                    DispatchQueue.main.async {
+                    cell.img.image = image
+                    }
+                }
+            }
+        }
+ 
+ 
+        //cell.img.image = self.carteles
         /*
           cell?.img.image = UIImage(named: carteles[indexPath.row])
           cell?.nombreCartel.text = cartele[indexPath.row]

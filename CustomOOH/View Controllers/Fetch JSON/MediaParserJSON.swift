@@ -9,8 +9,9 @@
 import Foundation
 
 
-struct MediaParserJSON: Codable {
+public struct MediaParserJSON:  Decodable {
     
-    public var img_name: String
-    
+    public var img_name: String!
+    public var url: String!
+    public var fecha_tomada: String!
 }

@@ -19,9 +19,13 @@ class ParserCartelesJSON: Decodable {
     public var estado: String!
     public var direccion: String!
     public var detalles: String!
+    
+    public var media: [MediaParserJSON]!
+    public var revisiones: [RevisionesParserJSON]!
+    
+    public var fecha_creacion: String!
+    public var condicion: String!
+    
     //public var coordenadasX: Number!
     //public var coordenadasY: Number!
-    //public var media: [MediaPa]?
-    
-    
 }

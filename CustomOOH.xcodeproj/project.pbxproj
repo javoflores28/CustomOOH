@@ -31,6 +31,7 @@
 		17C74C892628DC10000A4146 /* GrandesFormatosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C74C882628DC10000A4146 /* GrandesFormatosViewController.swift */; };
 		17C74C8D2628DC5F000A4146 /* SerachBarGrandes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C74C8C2628DC5F000A4146 /* SerachBarGrandes.swift */; };
 		17C74C8F2628DEBC000A4146 /* GrandesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C74C8E2628DEBC000A4146 /* GrandesCollectionViewCell.swift */; };
+		17C74C912628F424000A4146 /* RevisionesParserJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C74C902628F424000A4146 /* RevisionesParserJSON.swift */; };
 		17D100012627F1AE0004A175 /* ParserCartelesJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D100002627F1AE0004A175 /* ParserCartelesJSON.swift */; };
 		17D10003262800B30004A175 /* MediaParserJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D10002262800B30004A175 /* MediaParserJSON.swift */; };
 		17D1FFEF26268F040004A175 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1FFEE26268F040004A175 /* SplashViewController.swift */; };
@@ -71,6 +72,7 @@
 		17C74C882628DC10000A4146 /* GrandesFormatosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrandesFormatosViewController.swift; sourceTree = "<group>"; };
 		17C74C8C2628DC5F000A4146 /* SerachBarGrandes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerachBarGrandes.swift; sourceTree = "<group>"; };
 		17C74C8E2628DEBC000A4146 /* GrandesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrandesCollectionViewCell.swift; sourceTree = "<group>"; };
+		17C74C902628F424000A4146 /* RevisionesParserJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionesParserJSON.swift; sourceTree = "<group>"; };
 		17D100002627F1AE0004A175 /* ParserCartelesJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserCartelesJSON.swift; sourceTree = "<group>"; };
 		17D10002262800B30004A175 /* MediaParserJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaParserJSON.swift; sourceTree = "<group>"; };
 		17D1FFEE26268F040004A175 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				17D100002627F1AE0004A175 /* ParserCartelesJSON.swift */,
 				17D10002262800B30004A175 /* MediaParserJSON.swift */,
+				17C74C902628F424000A4146 /* RevisionesParserJSON.swift */,
 			);
 			path = "Fetch JSON";
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				17C74C892628DC10000A4146 /* GrandesFormatosViewController.swift in Sources */,
 				17A852F3261C3DAF00C64292 /* SuccessViewController.swift in Sources */,
 				17C74C842628D092000A4146 /* MobiliarioUrbanoCollectionViewCell.swift in Sources */,
+				17C74C912628F424000A4146 /* RevisionesParserJSON.swift in Sources */,
 				17C74C862628D3EC000A4146 /* SearchBarUrbanos.swift in Sources */,
 				17E191FD261B91E600B4EA34 /* Constants.swift in Sources */,
 				17C74C7D2628A7AD000A4146 /* MedianosCollectionViewCell.swift in Sources */,
