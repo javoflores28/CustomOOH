@@ -138,7 +138,7 @@ class DetallesCartelViewController: UIViewController {
         
         let llenarForumariViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.llenarForumariViewController) as? LlenarFormularioViewController
         
-        llenarForumariViewController?.modalPresentationStyle = .fullScreen
+        llenarForumariViewController?.modalPresentationStyle = .overCurrentContext
         llenarForumariViewController?.view.backgroundColor = .clear
         //llenarForumariViewController?.modalTransitionStyle = .flipHorizontal
         
