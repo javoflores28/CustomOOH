@@ -120,9 +120,14 @@ class HomeViewController: UIViewController {
         do {
                try Auth.auth().signOut()
              let mainViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.mainViewContorller) as? ViewController
+            
+            mainViewController?.modalTransitionStyle = .flipHorizontal
                       
                self.view.window?.rootViewController = mainViewController
-               self.view.window?.makeKeyAndVisible()
+            
+               //self.view.window?.makeKeyAndVisible()
+            
+            present(mainViewController!, animated: true)
                       
                
            } catch let signOutError as NSError {

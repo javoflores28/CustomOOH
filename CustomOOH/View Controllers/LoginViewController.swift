@@ -72,9 +72,14 @@ class LoginViewController: UIViewController {
             } else {
                 
                 let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+                
+                
+                homeViewController?.modalTransitionStyle = .flipHorizontal
                        
                 self.view.window?.rootViewController = homeViewController
-                self.view.window?.makeKeyAndVisible()
+                //self.view.window?.makeKeyAndVisible()
+                
+                self.present(homeViewController!, animated: true)
                 
                 
                        
