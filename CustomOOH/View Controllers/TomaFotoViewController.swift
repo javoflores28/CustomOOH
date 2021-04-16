@@ -16,6 +16,9 @@ class TomaFotoViewController: UIViewController {
     
     public var completionHnadler3: ((String?) -> Void)?
     
+    public var completionHnadler4: ((Bool?) -> Void)?
+    
+    public var completionHnadler5: ((Bool?) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +36,10 @@ class TomaFotoViewController: UIViewController {
         
         completionHnadler3?("LlenaFormulario")
         
-
+        completionHnadler4?(true)
+        
+        completionHnadler5?(false)
+        
         dismiss(animated: true, completion: nil)
         
         //_ = navigationController?.popViewController(animated: true)

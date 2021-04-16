@@ -891,6 +891,68 @@
             </objects>
             <point key="canvasLocation" x="6088.8000000000002" y="793.8530734632684"/>
         </scene>
+        <!--Llenar Formulario View Controller-->
+        <scene sceneID="MfJ-Gp-qxb">
+            <objects>
+                <viewController storyboardIdentifier="llenarForumariViewController" modalTransitionStyle="flipHorizontal" id="Gna-Wc-4l9" customClass="LlenarFormularioViewController" customModule="CustomOOH" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t4d-Sx-BqJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FormularioPantalla" translatesAutoresizingMaskIntoConstraints="NO" id="I1t-kB-MEA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMb-at-o12">
+                                <rect key="frame" x="53" y="130" width="263" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="buY-Wm-m5f">
+                                <rect key="frame" x="55" y="190" width="263" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z3g-ex-PrI">
+                                <rect key="frame" x="53" y="252" width="263" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zmK-6y-v9y">
+                                <rect key="frame" x="55" y="320" width="261" height="192"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0q-EJ-1Ns">
+                                <rect key="frame" x="99" y="582" width="177" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Listo">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="registrarFromulario:" destination="Gna-Wc-4l9" eventType="touchUpInside" id="3E1-xM-4Uo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="F3h-O0-mN5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ktG-yR-1rp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BOD-DQ-HF3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6850" y="794"/>
+        </scene>
         <!--Detalles Cartel View Controller-->
         <scene sceneID="xgR-BL-dZN">
             <objects>
@@ -904,7 +966,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="detallesTexto" translatesAutoresizingMaskIntoConstraints="NO" id="SDA-J3-Mft">
-                                <rect key="frame" x="123" y="172" width="129" height="28"/>
+                                <rect key="frame" x="128" y="172" width="129" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AreaTextoDetalles" translatesAutoresizingMaskIntoConstraints="NO" id="yws-3V-qsp">
@@ -961,6 +1023,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Click_Camara" translatesAutoresizingMaskIntoConstraints="NO" id="KhI-ax-S4Q">
+                                <rect key="frame" x="73" y="539" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zt5-AO-BZu">
+                                <rect key="frame" x="161" y="545" width="65" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="llenarformulario">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="llenarFormulario:" destination="ysa-x3-UnV" eventType="touchUpInside" id="JxZ-1v-oDr"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ica-Sa-r9r">
                                 <rect key="frame" x="156" y="553" width="74" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -968,13 +1044,9 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="tomarFoto:" destination="ysa-x3-UnV" eventType="touchUpInside" id="tM5-0G-8Jx"/>
+                                    <action selector="tomarFoto:" destination="ysa-x3-UnV" eventType="touchUpInside" id="0V1-1M-1Yx"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Click_Camara" translatesAutoresizingMaskIntoConstraints="NO" id="KhI-ax-S4Q">
-                                <rect key="frame" x="73" y="539" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Paso1_Falta" translatesAutoresizingMaskIntoConstraints="NO" id="P97-Qu-PGy">
                                 <rect key="frame" x="25" y="456" width="77" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -991,6 +1063,10 @@
                                 <rect key="frame" x="26" y="543" width="74" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VzN-26-mbo">
+                                <rect key="frame" x="266" y="550" width="105" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="imO-QM-Kgg"/>
@@ -1001,6 +1077,8 @@
                         <outlet property="detalles" destination="5UO-at-dT2" id="xpf-y9-v3B"/>
                         <outlet property="direccion" destination="Ryr-yu-jxC" id="7W9-ci-CAf"/>
                         <outlet property="fechaUltRegistro" destination="UC9-5M-59L" id="ftP-10-f1T"/>
+                        <outlet property="formulario" destination="zt5-AO-BZu" id="Ezj-eM-LnU"/>
+                        <outlet property="foto" destination="ica-Sa-r9r" id="6h2-Pw-c5N"/>
                         <outlet property="fotoTomada" destination="PNE-cE-h2t" id="ma5-MJ-Otg"/>
                         <outlet property="img" destination="5Rd-nT-ABC" id="COD-Tz-RJa"/>
                         <outlet property="instrucciones" destination="KhI-ax-S4Q" id="Dqt-M5-F0b"/>
@@ -1008,6 +1086,7 @@
                         <outlet property="paso_1" destination="P97-Qu-PGy" id="9cv-3E-2O3"/>
                         <outlet property="paso_2" destination="Qhd-aM-ZWg" id="IlF-SS-Se9"/>
                         <outlet property="paso_3" destination="tKR-NC-b8D" id="HBM-3z-zhd"/>
+                        <outlet property="registrar" destination="VzN-26-mbo" id="1fC-HL-AaH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgU-xg-UvX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1277,6 +1356,7 @@
         <image name="CATEGORIAS" width="749" height="213"/>
         <image name="Click_Camara" width="925" height="306"/>
         <image name="Detalles_Vacio" width="1242" height="2208"/>
+        <image name="FormularioPantalla" width="1242" height="2208"/>
         <image name="GrandesPantalla" width="1242" height="2208"/>
         <image name="InicarSesion" width="1242" height="2208"/>
         <image name="Javier" width="496" height="490"/>

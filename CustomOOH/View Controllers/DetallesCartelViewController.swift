@@ -33,6 +33,12 @@ class DetallesCartelViewController: UIViewController {
     
     @IBOutlet weak var fotoTomada: UIImageView!
     
+    @IBOutlet weak var registrar: UIImageView!
+    
+    @IBOutlet weak var foto: UIButton!
+    
+    @IBOutlet weak var formulario: UIButton!
+    
     //Varaibles para pasar los datos extraidos y recuperados del JSON
     var paso2 = "Falta"
     
@@ -60,6 +66,9 @@ class DetallesCartelViewController: UIViewController {
         condicion.text = condicion2
         fechaUltRegistro.text = ultimaRevision
         detalles.text = detalles2
+        
+        formulario.isHidden = true
+        
         
         /*
         if  Paso1.text == "Listo" {
@@ -98,6 +107,8 @@ class DetallesCartelViewController: UIViewController {
         let tomarFotoViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.tomarFotoViewController) as? TomaFotoViewController
                     
         tomarFotoViewController?.modalPresentationStyle = .fullScreen
+        
+        //Haz los cambios pertientes en los campos para validar que se tomo la foto
         tomarFotoViewController?.completionHnadler1 = { text in
             self.paso_1.image = UIImage(named: text!)
         }
@@ -107,12 +118,50 @@ class DetallesCartelViewController: UIViewController {
         tomarFotoViewController?.completionHnadler3 = { text in
             self.instrucciones.image = UIImage(named: text!)
         }
+        tomarFotoViewController?.completionHnadler4 = { Bool in
+            self.foto.isHidden = Bool!
+        }
+        
+        tomarFotoViewController?.completionHnadler5 = { Bool in
+            self.formulario.isHidden = Bool!
+        }
+ 
         present(tomarFotoViewController!, animated: true)
         
         //self.view.window?.rootViewController = tomarFotoViewController
         //self.view.window?.makeKeyAndVisible()
      
     }
+    
+    
+    @IBAction func llenarFormulario(_ sender: Any) {
+        
+        let llenarForumariViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.llenarForumariViewController) as? LlenarFormularioViewController
+        
+        llenarForumariViewController?.modalPresentationStyle = .fullScreen
+        llenarForumariViewController?.view.backgroundColor = .clear
+        //llenarForumariViewController?.modalTransitionStyle = .flipHorizontal
+        
+        //Haz los cambios pertientes en los campos para validar que se llenó el formulario
+        
+        llenarForumariViewController?.completionHnadler1 = { text in
+            self.paso_2.image = UIImage(named: text!)
+        }
+        llenarForumariViewController?.completionHnadler2 = { text in
+            self.instrucciones.image = UIImage(named: text!)
+        }
+        llenarForumariViewController?.completionHnadler3 = { text in
+            self.paso_3.image = UIImage(named: text!)
+        }
+        llenarForumariViewController?.completionHnadler4 = { text in
+            self.registrar.image = UIImage(named: text!)
+        }
+        present(llenarForumariViewController!, animated: true)
+        
+    }
+    
+    
+    
     
     
 

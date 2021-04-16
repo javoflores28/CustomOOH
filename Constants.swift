@@ -18,6 +18,7 @@ struct  Constants {
         static let categoriasViewContorller = "categorias"
         static let paletasViewController = "paletasViewController"
         static let tomarFotoViewController = "tomarFoto"
+        static let llenarForumariViewController = "llenarForumariViewController"
     }
 }
 

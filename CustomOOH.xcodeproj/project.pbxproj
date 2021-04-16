@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		170E0D3912ECBA4B94524822 /* Pods_CustomOOH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A606327ECB7DC072DD6AF2 /* Pods_CustomOOH.framework */; };
+		171E91AF262941D100B55524 /* LlenarFormularioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171E91AE262941D100B55524 /* LlenarFormularioViewController.swift */; };
 		173AC4C726281A0B004C3EF5 /* SearchBarPaletas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173AC4C626281A0A004C3EF5 /* SearchBarPaletas.swift */; };
 		17404856261AA33A00DF957D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17404855261AA33A00DF957D /* AppDelegate.swift */; };
 		17404858261AA33A00DF957D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17404857261AA33A00DF957D /* SceneDelegate.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		055B1634D1146D2E0346E3E0 /* Pods-CustomOOH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomOOH.release.xcconfig"; path = "Target Support Files/Pods-CustomOOH/Pods-CustomOOH.release.xcconfig"; sourceTree = "<group>"; };
 		07A606327ECB7DC072DD6AF2 /* Pods_CustomOOH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomOOH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		171E91AE262941D100B55524 /* LlenarFormularioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LlenarFormularioViewController.swift; sourceTree = "<group>"; };
 		173AC4C626281A0A004C3EF5 /* SearchBarPaletas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarPaletas.swift; sourceTree = "<group>"; };
 		17404852261AA33A00DF957D /* CustomOOH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomOOH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17404855261AA33A00DF957D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				17D1FFF026276F900004A175 /* AcercaDeViewController.swift */,
 				17D1FFFE2627DFC40004A175 /* DetallesCartelViewController.swift */,
 				17C74C922629186C000A4146 /* TomaFotoViewController.swift */,
+				171E91AE262941D100B55524 /* LlenarFormularioViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				17C74C842628D092000A4146 /* MobiliarioUrbanoCollectionViewCell.swift in Sources */,
 				17C74C912628F424000A4146 /* RevisionesParserJSON.swift in Sources */,
 				17C74C862628D3EC000A4146 /* SearchBarUrbanos.swift in Sources */,
+				171E91AF262941D100B55524 /* LlenarFormularioViewController.swift in Sources */,
 				17E191FD261B91E600B4EA34 /* Constants.swift in Sources */,
 				17C74C7D2628A7AD000A4146 /* MedianosCollectionViewCell.swift in Sources */,
 				17D1FFFB2627C9B60004A175 /* PaletasViewController.swift in Sources */,
