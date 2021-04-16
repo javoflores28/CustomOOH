@@ -35,9 +35,14 @@ class DetallesCartelViewController: UIViewController {
     
     @IBOutlet weak var registrar: UIImageView!
     
+    //Botones dinámicos que cambian 
+    
     @IBOutlet weak var foto: UIButton!
     
     @IBOutlet weak var formulario: UIButton!
+    
+    @IBOutlet weak var registrarEvaluacion: UIButton!
+    
     
     //Varaibles para pasar los datos extraidos y recuperados del JSON
     var paso2 = "Falta"
@@ -68,7 +73,7 @@ class DetallesCartelViewController: UIViewController {
         detalles.text = detalles2
         
         formulario.isHidden = true
-        
+        registrarEvaluacion.isHidden = true
         
         /*
         if  Paso1.text == "Listo" {
@@ -156,6 +161,11 @@ class DetallesCartelViewController: UIViewController {
         llenarForumariViewController?.completionHnadler4 = { text in
             self.registrar.image = UIImage(named: text!)
         }
+        
+        llenarForumariViewController?.completionHnadler5 = { Bool in
+             self.registrarEvaluacion.isHidden = Bool!
+        }
+        
         present(llenarForumariViewController!, animated: true)
         
     }
@@ -171,6 +181,11 @@ class DetallesCartelViewController: UIViewController {
         _ = navigationController?.popViewController(animated: true)
 
     }
+    
+    @IBAction func registrar(_ sender: Any) {
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
     
  
 

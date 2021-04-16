@@ -549,7 +549,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="115"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <searchBar clipsSubviews="YES" contentMode="redraw" fixedFrame="YES" placeholder="Ingresa el nombre" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7df-id-J5e">
+                                        <searchBar clipsSubviews="YES" contentMode="redraw" fixedFrame="YES" placeholder="Ingresa el nombre" translatesAutoresizingMaskIntoConstraints="NO" id="7df-id-J5e">
                                             <rect key="frame" x="0.0" y="13" width="343" height="56"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -930,7 +930,7 @@
                                 <rect key="frame" x="55" y="320" width="261" height="192"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" red="0.2390899658" green="0.47846245770000001" blue="0.58423823119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.1920018792" green="0.46669733520000001" blue="0.58031696079999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1069,6 +1069,16 @@
                                 <rect key="frame" x="266" y="550" width="105" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOn-OX-YJT">
+                                <rect key="frame" x="266" y="567" width="105" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="registrar">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="registrar:" destination="ysa-x3-UnV" eventType="touchUpInside" id="lLP-vp-l1N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="imO-QM-Kgg"/>
@@ -1089,6 +1099,7 @@
                         <outlet property="paso_2" destination="Qhd-aM-ZWg" id="IlF-SS-Se9"/>
                         <outlet property="paso_3" destination="tKR-NC-b8D" id="HBM-3z-zhd"/>
                         <outlet property="registrar" destination="VzN-26-mbo" id="1fC-HL-AaH"/>
+                        <outlet property="registrarEvaluacion" destination="kOn-OX-YJT" id="LH7-fd-Je0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgU-xg-UvX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1347,7 +1358,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sIy-TH-2Tv"/>
+        <segue reference="cCP-zf-uKA"/>
         <segue reference="nAj-bL-df5"/>
     </inferredMetricsTieBreakers>
     <resources>

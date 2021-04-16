@@ -17,6 +17,8 @@ class LlenarFormularioViewController: UIViewController {
     public var completionHnadler3: ((String?) -> Void)?
     
     public var completionHnadler4: ((String?) -> Void)?
+    
+    public var completionHnadler5: ((Bool?) -> Void)?
 
 
     override func viewDidLoad() {
@@ -31,6 +33,7 @@ class LlenarFormularioViewController: UIViewController {
         completionHnadler2?("formularioListo")
         completionHnadler3?("Paso3_Listo")
         completionHnadler4?("registrarBoton")
+        completionHnadler5?(false)
         
         dismiss(animated: true, completion: nil)
     }
