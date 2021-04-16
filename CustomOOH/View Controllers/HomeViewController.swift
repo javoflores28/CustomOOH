@@ -125,9 +125,9 @@ class HomeViewController: UIViewController {
                       
                self.view.window?.rootViewController = mainViewController
             
-               //self.view.window?.makeKeyAndVisible()
+               self.view.window?.makeKeyAndVisible()
             
-            present(mainViewController!, animated: true)
+            //present(mainViewController!, animated: true)
                       
                
            } catch let signOutError as NSError {

@@ -75,11 +75,12 @@ class LoginViewController: UIViewController {
                 
                 
                 homeViewController?.modalTransitionStyle = .flipHorizontal
+              
                        
                 self.view.window?.rootViewController = homeViewController
-                //self.view.window?.makeKeyAndVisible()
+                self.view.window?.makeKeyAndVisible()
                 
-                self.present(homeViewController!, animated: true)
+                //self.present(homeViewController!, animated: true)
                 
                 
                        
