@@ -130,6 +130,8 @@ class PaletasViewController: UIViewController, UICollectionViewDataSource, UICol
         
         return cell
       }
+    
+    //Enviar datos a pantalla de detalles
       
       func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
           
@@ -138,6 +140,12 @@ class PaletasViewController: UIViewController, UICollectionViewDataSource, UICol
           //vc?.name = cartelesArr[indexPath.row]
           vc?.name = self.carteles[indexPath.item].nombre
           vc?.detalles2 = self.carteles[indexPath.item].detalles
+          vc?.direccion2 = self.carteles[indexPath.item].direccion
+          vc?.condicion2 = "Condición: " + self.carteles[indexPath.item].condicion
+          vc?.ultimaRevision = "Última revisión: " + self.carteles[indexPath.item].revisiones[0].fecha_revision
+          vc?.imagen = carteles[indexPath.item].media[0].url
+            
+        
           self.navigationController?.pushViewController(vc!, animated: true)
           
       }

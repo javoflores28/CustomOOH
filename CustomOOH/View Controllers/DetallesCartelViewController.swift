@@ -27,12 +27,39 @@ class DetallesCartelViewController: UIViewController {
     
     var detalles2 = ""
     
+    var direccion2 = ""
+    
+    var condicion2 = ""
+    
+    var ultimaRevision = ""
+    
+    var imagen = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         nombreCartel.text = name
-        img.image = UIImage(named: name)
+        direccion.text = direccion2
+        condicion.text = condicion2
+        fechaUltRegistro.text = ultimaRevision
         detalles.text = detalles2
+        
+        
+        if let imageURL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data" + imagen) {
+                   DispatchQueue.global().async {
+                       let data = try? Data(contentsOf: imageURL)
+                       if let data = data {
+                           let image = UIImage(data: data)
+                           DispatchQueue.main.async {
+                            self.img.image = image
+                           }
+                       }
+                   }
+               }
+        
+        
+        
+        
 
         
         // Do any additional setup after loading the view.

@@ -79,7 +79,22 @@ class MobiliarioUrbanoViewController: UIViewController, UICollectionViewDataSour
            cell.nombreCartel.text = self.carteles[indexPath.item].nombre
            cell.detalles = self.carteles[indexPath.item].detalles
            
-           
+           cell.condicion.text = "Condición " + self.carteles[indexPath.item].condicion
+           cell.fechaUltRegistro.text = self.carteles[indexPath.item].revisiones[0].fecha_revision
+            
+            //Coloar imagenes del JSON
+            if let imageURL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data" + carteles[indexPath.item].media[0].url) {
+                DispatchQueue.global().async {
+                    let data = try? Data(contentsOf: imageURL)
+                    if let data = data {
+                        let image = UIImage(data: data)
+                        DispatchQueue.main.async {
+                        cell.img.image = image
+                        }
+                    }
+                }
+            }
+            
            /*
              cell?.img.image = UIImage(named: carteles[indexPath.row])
              cell?.nombreCartel.text = cartele[indexPath.row]
@@ -89,17 +104,24 @@ class MobiliarioUrbanoViewController: UIViewController, UICollectionViewDataSour
            
            return cell
          }
-         
+    
+         //Enviar datos a pantalla de detalles
          func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
              
-             let vc = storyboard?.instantiateViewController(withIdentifier: "DetallesCartelViewController") as? DetallesCartelViewController
-             
-             //vc?.name = cartelesArr[indexPath.row]
-             vc?.name = self.carteles[indexPath.item].nombre
-             vc?.detalles2 = self.carteles[indexPath.item].detalles
-             self.navigationController?.pushViewController(vc!, animated: true)
-             
-         }
+                 let vc = storyboard?.instantiateViewController(withIdentifier: "DetallesCartelViewController") as? DetallesCartelViewController
+                 
+                 //vc?.name = cartelesArr[indexPath.row]
+                 vc?.name = self.carteles[indexPath.item].nombre
+                 vc?.detalles2 = self.carteles[indexPath.item].detalles
+                 vc?.direccion2 = self.carteles[indexPath.item].direccion
+                 vc?.condicion2 = "Condición: " + self.carteles[indexPath.item].condicion
+                 vc?.ultimaRevision = "Última revisión: " + self.carteles[indexPath.item].revisiones[0].fecha_revision
+                 vc?.imagen = carteles[indexPath.item].media[0].url
+                   
+               
+                 self.navigationController?.pushViewController(vc!, animated: true)
+                 
+             }
        
       func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
