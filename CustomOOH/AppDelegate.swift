@@ -19,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
+        /*
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        window?.rootViewController = UINavigationController(rootViewController: DetallesCartelViewController())
+        */
         return true
     }
 

@@ -22,6 +22,21 @@ class DetallesCartelViewController: UIViewController {
     
     @IBOutlet weak var detalles: UILabel!
     
+    //Imagenes para cambiar de Paso
+    @IBOutlet weak var instrucciones: UIImageView!
+    
+    @IBOutlet weak var paso_1: UIImageView!
+    
+    @IBOutlet weak var paso_2: UIImageView!
+    
+    @IBOutlet weak var paso_3: UIImageView!
+    
+    @IBOutlet weak var fotoTomada: UIImageView!
+    
+    //Varaibles para pasar los datos extraidos y recuperados del JSON
+    var paso2 = "Falta"
+    
+    var paso3 = "Falta"
     
     var name = ""
     
@@ -38,11 +53,27 @@ class DetallesCartelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Paso1.text = "Falta"
+        
         nombreCartel.text = name
         direccion.text = direccion2
         condicion.text = condicion2
         fechaUltRegistro.text = ultimaRevision
         detalles.text = detalles2
+        
+        /*
+        if  Paso1.text == "Listo" {
+            paso_1.image = UIImage(named: "Paso1_Listo")
+            instrucciones.image = UIImage(named: "")
+            
+        } else {
+            paso_1.image = UIImage(named: "Paso1_Vacio")
+            instrucciones.image = UIImage(named: "Click_Camara")
+        }
+        
+
+        */
+        
         
         
         if let imageURL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data" + imagen) {
@@ -57,13 +88,34 @@ class DetallesCartelViewController: UIViewController {
                    }
                }
         
-        
-        
-        
-
+        //self.navigationController?.navigationBar.prefersLargeTitles = true
         
         // Do any additional setup after loading the view.
     }
+     
+    @IBAction func tomarFoto(_ sender: Any) {
+        
+        let tomarFotoViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.tomarFotoViewController) as? TomaFotoViewController
+                    
+        tomarFotoViewController?.modalPresentationStyle = .fullScreen
+        tomarFotoViewController?.completionHnadler1 = { text in
+            self.paso_1.image = UIImage(named: text!)
+        }
+        tomarFotoViewController?.completionHnadler2 = { text in
+            self.fotoTomada.image = UIImage(named: text!)
+        }
+        tomarFotoViewController?.completionHnadler3 = { text in
+            self.instrucciones.image = UIImage(named: text!)
+        }
+        present(tomarFotoViewController!, animated: true)
+        
+        //self.view.window?.rootViewController = tomarFotoViewController
+        //self.view.window?.makeKeyAndVisible()
+     
+    }
+    
+    
+
     
     @IBAction func regresar(_ sender: Any) {
         

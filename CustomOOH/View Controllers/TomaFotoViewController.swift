@@ -9,7 +9,14 @@
 import UIKit
 
 class TomaFotoViewController: UIViewController {
-
+    
+    public var completionHnadler1: ((String?) -> Void)?
+    
+    public var completionHnadler2: ((String?) -> Void)?
+    
+    public var completionHnadler3: ((String?) -> Void)?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,9 +25,18 @@ class TomaFotoViewController: UIViewController {
     
 
     @IBAction func tomaFoto(_ sender: Any) {
-    
         
-        _ = navigationController?.popViewController(animated: true)
+        
+        completionHnadler1?("Paso1_Listo")
+        
+        completionHnadler2?("fotoTomada")
+        
+        completionHnadler3?("LlenaFormulario")
+        
+
+        dismiss(animated: true, completion: nil)
+        
+        //_ = navigationController?.popViewController(animated: true)
         
     }
     

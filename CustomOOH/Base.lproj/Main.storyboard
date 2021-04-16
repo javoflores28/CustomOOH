@@ -862,9 +862,9 @@
         <!--Toma Foto View Controller-->
         <scene sceneID="AFl-Jx-gtS">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="UxE-ig-YNS" customClass="TomaFotoViewController" customModule="CustomOOH" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tomarFoto" modalPresentationStyle="fullScreen" id="UxE-ig-YNS" customClass="TomaFotoViewController" customModule="CustomOOH" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IhG-Ep-glG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TomaFotoPantalla" translatesAutoresizingMaskIntoConstraints="NO" id="s0t-0t-Rnb">
@@ -899,7 +899,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="detallesCartel" translatesAutoresizingMaskIntoConstraints="NO" id="Qrt-ja-716">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Detalles_Vacio" translatesAutoresizingMaskIntoConstraints="NO" id="Qrt-ja-716">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -968,9 +968,29 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="UxE-ig-YNS" kind="show" id="zSm-yt-ys1"/>
+                                    <action selector="tomarFoto:" destination="ysa-x3-UnV" eventType="touchUpInside" id="tM5-0G-8Jx"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Click_Camara" translatesAutoresizingMaskIntoConstraints="NO" id="KhI-ax-S4Q">
+                                <rect key="frame" x="73" y="539" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Paso1_Falta" translatesAutoresizingMaskIntoConstraints="NO" id="P97-Qu-PGy">
+                                <rect key="frame" x="25" y="456" width="77" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Paso2_Falta" translatesAutoresizingMaskIntoConstraints="NO" id="Qhd-aM-ZWg">
+                                <rect key="frame" x="154" y="456" width="77" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Paso3_Falta" translatesAutoresizingMaskIntoConstraints="NO" id="tKR-NC-b8D">
+                                <rect key="frame" x="280" y="455" width="77" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PNE-cE-h2t">
+                                <rect key="frame" x="26" y="543" width="74" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="imO-QM-Kgg"/>
@@ -981,8 +1001,13 @@
                         <outlet property="detalles" destination="5UO-at-dT2" id="xpf-y9-v3B"/>
                         <outlet property="direccion" destination="Ryr-yu-jxC" id="7W9-ci-CAf"/>
                         <outlet property="fechaUltRegistro" destination="UC9-5M-59L" id="ftP-10-f1T"/>
+                        <outlet property="fotoTomada" destination="PNE-cE-h2t" id="ma5-MJ-Otg"/>
                         <outlet property="img" destination="5Rd-nT-ABC" id="COD-Tz-RJa"/>
+                        <outlet property="instrucciones" destination="KhI-ax-S4Q" id="Dqt-M5-F0b"/>
                         <outlet property="nombreCartel" destination="Nha-IZ-eeE" id="rUV-ZW-eBa"/>
+                        <outlet property="paso_1" destination="P97-Qu-PGy" id="9cv-3E-2O3"/>
+                        <outlet property="paso_2" destination="Qhd-aM-ZWg" id="IlF-SS-Se9"/>
+                        <outlet property="paso_3" destination="tKR-NC-b8D" id="HBM-3z-zhd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgU-xg-UvX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1242,7 +1267,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="sIy-TH-2Tv"/>
-        <segue reference="HnN-2a-0M9"/>
+        <segue reference="nAj-bL-df5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AcercaDe" width="181" height="177"/>
@@ -1250,6 +1275,8 @@
         <image name="AreaTextoDetalles" width="1132" height="263"/>
         <image name="BarraCatagoríasMapa" width="1242" height="387"/>
         <image name="CATEGORIAS" width="749" height="213"/>
+        <image name="Click_Camara" width="925" height="306"/>
+        <image name="Detalles_Vacio" width="1242" height="2208"/>
         <image name="GrandesPantalla" width="1242" height="2208"/>
         <image name="InicarSesion" width="1242" height="2208"/>
         <image name="Javier" width="496" height="490"/>
@@ -1257,6 +1284,9 @@
         <image name="Main" width="1242" height="2208"/>
         <image name="MedianosFormatoPantalla" width="1242" height="2208"/>
         <image name="PaletasPantalla" width="1242" height="2208"/>
+        <image name="Paso1_Falta" width="189" height="183"/>
+        <image name="Paso2_Falta" width="190" height="183"/>
+        <image name="Paso3_Falta" width="189" height="183"/>
         <image name="Registrarse" width="1242" height="2208"/>
         <image name="Registro_exitoso" width="1242" height="2208"/>
         <image name="Santi" width="501" height="511"/>
@@ -1265,7 +1295,6 @@
         <image name="UrbanoPantalla" width="1242" height="2208"/>
         <image name="VIEW_CATEGORIAS" width="1242" height="2208"/>
         <image name="cerrarMenu" width="101" height="84"/>
-        <image name="detallesCartel" width="1242" height="2208"/>
         <image name="detallesTexto" width="250" height="42"/>
         <image name="hamburguesa" width="181" height="181"/>
         <image name="rango1" width="560" height="562"/>
