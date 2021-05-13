@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BasicCalloutView" customModule="CustomOOH" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="147" height="210"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VMm-0N-GBb">
+                    <rect key="frame" x="52.5" y="15" width="42" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="27" id="zxP-kD-Vrc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FPu-Gi-0Ff">
+                    <rect key="frame" x="28.5" y="47" width="90" height="99"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="99" id="NGW-Ug-FbL"/>
+                        <constraint firstAttribute="width" constant="90" id="OAl-0M-8xu"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQu-AI-Szu">
+                    <rect key="frame" x="26" y="152" width="90" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="CuS-Kp-5LY"/>
+                        <constraint firstAttribute="height" constant="44" id="M18-DN-zh2"/>
+                    </constraints>
+                    <state key="normal" title="Detail">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonTouchDown:" destination="iN0-l3-epB" eventType="touchUpInside" id="V0q-jM-Nll"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="FPu-Gi-0Ff" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7Ks-qZ-tg7"/>
+                <constraint firstItem="DQu-AI-Szu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="26" id="ChR-Wb-rS0"/>
+                <constraint firstItem="FPu-Gi-0Ff" firstAttribute="centerX" secondItem="VMm-0N-GBb" secondAttribute="centerX" id="Lp4-Oq-UPz"/>
+                <constraint firstItem="FPu-Gi-0Ff" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="47" id="Xml-U4-k50"/>
+                <constraint firstItem="FPu-Gi-0Ff" firstAttribute="top" secondItem="VMm-0N-GBb" secondAttribute="bottom" constant="5" id="hdN-qZ-D53"/>
+                <constraint firstItem="DQu-AI-Szu" firstAttribute="top" secondItem="FPu-Gi-0Ff" secondAttribute="bottom" constant="6" id="vBb-LJ-CKp"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="button" destination="DQu-AI-Szu" id="vfT-bx-FNL"/>
+                <outlet property="imageView" destination="FPu-Gi-0Ff" id="P0x-gr-yMn"/>
+                <outlet property="label" destination="VMm-0N-GBb" id="iOp-1Z-hdx"/>
+            </connections>
+            <point key="canvasLocation" x="-39.200000000000003" y="-123.23838080959521"/>
+        </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMD-Yx-Vqz">
+            <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="height" constant="44" id="k3b-gU-fr3"/>
+                <constraint firstAttribute="width" constant="90" id="lgE-UW-lYu"/>
+            </constraints>
+            <state key="normal" title="Detail">
+                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            </state>
+            <point key="canvasLocation" x="258" y="-158"/>
+        </button>
+    </objects>
+</document>

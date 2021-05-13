@@ -10,5 +10,9 @@ pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'Firebase/Analytics'
 pod 'Firebase/Firestore'
+pod 'MapViewPlus'
+pod 'Firebase/Storage'
+pod 'Firebase/Database'
+
 
 end

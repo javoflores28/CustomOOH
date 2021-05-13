@@ -127,8 +127,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xUj-ld-oK6">
-                                <rect key="frame" x="1" y="0.0" width="373" height="667"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="56o-TP-3ia" customClass="MapViewPlus" customModule="CustomOOH">
+                                <rect key="frame" x="-2" y="0.0" width="379" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburguesa" translatesAutoresizingMaskIntoConstraints="NO" id="naP-RR-sdC">
@@ -172,22 +172,11 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CATEGORIAS" translatesAutoresizingMaskIntoConstraints="NO" id="HSA-mV-Ak5">
-                                        <rect key="frame" x="-3" y="202" width="263" height="135"/>
+                                        <rect key="frame" x="-3" y="252" width="263" height="135"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoSinTexto" translatesAutoresizingMaskIntoConstraints="NO" id="OMW-4k-onP">
-                                        <rect key="frame" x="33" y="8" width="175" height="98"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hola..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZX-81-3ZR">
-                                        <rect key="frame" x="12" y="94" width="222" height="69"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <color key="textColor" red="0.063165925440000006" green="0.38123404979999997" blue="0.52550899979999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color key="highlightedColor" red="0.086798585950000007" green="0.39713406559999997" blue="0.53335154060000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VA0-Lt-fMq">
-                                        <rect key="frame" x="8" y="245" width="232" height="43"/>
+                                        <rect key="frame" x="8" y="293" width="232" height="43"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="CATEGORIAS"/>
                                         <connections>
@@ -195,11 +184,11 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AcercaDe" translatesAutoresizingMaskIntoConstraints="NO" id="pjP-aa-aMI">
-                                        <rect key="frame" x="41" y="334" width="165" height="83"/>
+                                        <rect key="frame" x="38" y="386" width="165" height="83"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtw-yr-0is">
-                                        <rect key="frame" x="78" y="334" width="90" height="83"/>
+                                        <rect key="frame" x="75" y="386" width="90" height="83"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Acerca">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -208,6 +197,34 @@
                                             <segue destination="rDd-a8-svc" kind="show" id="ccM-Sg-jZo"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6T-is-I3S">
+                                        <rect key="frame" x="79" y="136" width="90" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <state key="normal" title="Cambiar foto">
+                                            <color key="titleColor" red="0.086798585950000007" green="0.39713406559999997" blue="0.53335154060000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapButton" destination="EAq-GR-5MD" eventType="touchUpInside" id="rC8-ig-OG8"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AmG-tg-bpB">
+                                        <rect key="frame" x="70" y="33" width="104" height="95"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZX-81-3ZR">
+                                        <rect key="frame" x="8" y="194" width="222" height="69"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <color key="textColor" red="0.063165925440000006" green="0.38123404979999997" blue="0.52550899979999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="highlightedColor" red="0.086798585950000007" green="0.39713406559999997" blue="0.53335154060000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoSinTexto" translatesAutoresizingMaskIntoConstraints="NO" id="OMW-4k-onP">
+                                        <rect key="frame" x="78" y="523" width="92" height="68"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.089902631940000005" green="0.48271226880000001" blue="0.65100264549999998" alpha="0.19201144366197184" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -235,6 +252,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="6um-CD-eOT"/>
                     <connections>
+                        <outlet property="imageView" destination="AmG-tg-bpB" id="a0Y-4c-Bbc"/>
+                        <outlet property="mapView" destination="56o-TP-3ia" id="Bx9-kX-ZLB"/>
                         <outlet property="menuView" destination="Fy8-1A-mtQ" id="Sdl-I2-Wtn"/>
                         <outlet property="nombreUsuario" destination="lZX-81-3ZR" id="Xk0-T1-gtB"/>
                         <outlet property="sideView" destination="Waf-Gq-wS4" id="Wll-X9-TiL"/>
@@ -248,7 +267,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2044" y="-36.431784107946029"/>
+            <point key="canvasLocation" x="2821.5999999999999" y="-92.203898050974516"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="iQ4-Se-sJC">
@@ -263,7 +282,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X7S-0D-6wU">
-                                <rect key="frame" x="49" y="233" width="283" height="34"/>
+                                <rect key="frame" x="49" y="255" width="283" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -279,13 +298,13 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a19-iW-0uG">
-                                <rect key="frame" x="49" y="334" width="283" height="34"/>
+                                <rect key="frame" x="49" y="350" width="283" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="92G-YG-YFj">
-                                <rect key="frame" x="49" y="285" width="283" height="34"/>
+                                <rect key="frame" x="49" y="303" width="283" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -307,14 +326,29 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="lUw-KY-GgE"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mrx-0s-ofn">
+                                <rect key="frame" x="150" y="170" width="83" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWU-ZK-RAc">
+                                <rect key="frame" x="85" y="431" width="204" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Q5E-Ip-xtj"/>
                     </view>
                     <navigationItem key="navigationItem" id="7a0-ZB-Zxc"/>
                     <connections>
+                        <outlet property="avatar" destination="mrx-0s-ofn" id="o4G-Hl-2Yk"/>
                         <outlet property="emailTextField" destination="92G-YG-YFj" id="1fc-hn-DRa"/>
                         <outlet property="errorLabel" destination="NMW-Iu-EHS" id="sVa-9g-Bmd"/>
+                        <outlet property="imageUrlTextField" destination="AWU-ZK-RAc" id="5vf-0d-psL"/>
                         <outlet property="passwordTextField" destination="a19-iW-0uG" id="yQB-f2-RXg"/>
                         <outlet property="signUpButton" destination="ECz-LG-gcW" id="AQu-fy-rUP"/>
                         <outlet property="usernameTextField" destination="X7S-0D-6wU" id="jnC-Hz-e6g"/>
@@ -322,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBd-80-vW4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1209" y="-707"/>
+            <point key="canvasLocation" x="1208.8" y="-707.49625187406298"/>
         </scene>
         <!--Acerca De View Controller-->
         <scene sceneID="6DR-YP-HSJ">
@@ -438,6 +472,11 @@
                                     <segue destination="Tb5-7D-ZfH" kind="show" id="H3V-WL-L8g"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrM-5U-fhP">
+                                <rect key="frame" x="164" y="597" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6MZ-8x-Ojd"/>
@@ -446,7 +485,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Afl-vg-35l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3940" y="-36.431784107946029"/>
+            <point key="canvasLocation" x="4879.1999999999998" y="-36.431784107946029"/>
         </scene>
         <!--Paletas View Controller-->
         <scene sceneID="edi-rT-uED">
@@ -748,7 +787,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8L-xT-ARF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4869.6000000000004" y="-36.431784107946029"/>
+            <point key="canvasLocation" x="5808.8000000000002" y="-36.431784107946029"/>
         </scene>
         <!--Mobiliario Urbano View Controller-->
         <scene sceneID="SHO-BR-pzu">
@@ -1152,7 +1191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgU-xg-UvX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6184.8000000000002" y="-36.431784107946029"/>
+            <point key="canvasLocation" x="7124" y="-36.431784107946029"/>
         </scene>
         <!--Nuevo Cartel View Controller-->
         <scene sceneID="UiQ-UA-K20">
@@ -1487,13 +1526,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFR-7S-Xu3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3000.8000000000002" y="-36.431784107946029"/>
+            <point key="canvasLocation" x="3940" y="-36.431784107946029"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1OG-k6-pzG"/>
-        <segue reference="7uG-DL-Gfh"/>
-        <segue reference="nAj-bL-df5"/>
+        <segue reference="skp-ty-HRq"/>
+        <segue reference="cCP-zf-uKA"/>
+        <segue reference="lUw-KY-GgE"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AcercaDe" width="181" height="177"/>
