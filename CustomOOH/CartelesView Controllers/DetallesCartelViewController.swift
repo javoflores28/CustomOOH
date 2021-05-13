@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreML
+import Vision
+@available(iOS 11.0, *)
 
-class DetallesCartelViewController: UIViewController {
+class DetallesCartelViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var nombreCartel: UILabel!
     
@@ -43,6 +46,12 @@ class DetallesCartelViewController: UIViewController {
     
     @IBOutlet weak var registrarEvaluacion: UIButton!
     
+    @IBOutlet weak var tomarfoto: UIButton!
+    
+    private let miPicker = UIImagePickerController()
+    
+    @IBOutlet weak var condicionImagen: UILabel!
+    
     
     //Varaibles para pasar los datos extraidos y recuperados del JSON
     var paso2 = "Falta"
@@ -63,6 +72,8 @@ class DetallesCartelViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        miPicker.delegate = self
         
         //Paso1.text = "Falta"
         
@@ -88,8 +99,6 @@ class DetallesCartelViewController: UIViewController {
 
         */
         
-        
-        
         if let imageURL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data" + imagen) {
                    DispatchQueue.global().async {
                        let data = try? Data(contentsOf: imageURL)
@@ -105,6 +114,8 @@ class DetallesCartelViewController: UIViewController {
         //self.navigationController?.navigationBar.prefersLargeTitles = true
         
         // Do any additional setup after loading the view.
+        
+        
     }
      
     @IBAction func tomarFoto(_ sender: Any) {
@@ -170,9 +181,62 @@ class DetallesCartelViewController: UIViewController {
         
     }
     
+
     
     
+    @IBAction func ejecutarML() {
+        //instanciar el modelo de la red neuronal
+        let modelFile = MLcarteles()
+        let model = try! VNCoreMLModel(for: modelFile.model)
+        //Convertir la imagen obtenida a CIImage
+        let imagenCI = CIImage(image: fotoTomada.image!)
+        //Crear un controlador para el manejo de la imagen, este es un requerimiento para ejecutar la solicitud del modelo
+        let handler = VNImageRequestHandler(ciImage: imagenCI!)
+        //Crear una solicitud al modelo para el análisis de la imagen
+        let request = VNCoreMLRequest(model: model, completionHandler: resultadosModelo)
+        try! handler.perform([request])
+
+    }
     
+    func resultadosModelo(request: VNRequest, error: Error?)
+    {
+        guard let results = request.results as? [VNClassificationObservation] else { fatalError("No hubo respuesta del modelo ML")}
+        var bestPrediction = ""
+        var bestConfidence: VNConfidence = 0
+        //recorrer todas las respuestas en búsqueda del mejor resultado
+        for classification in results{
+            if (classification.confidence > bestConfidence){
+                bestConfidence = classification.confidence
+                bestPrediction = classification.identifier
+            }
+        }
+        let resultado = "Estado: " + bestPrediction
+        print(resultado)
+        condicionImagen.text = resultado
+    }
+    
+    
+    @IBAction func album() {
+        miPicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        present(miPicker, animated: true, completion: nil)
+    }
+    
+   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey  : Any]) {
+        fotoTomada.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        picker.dismiss(animated: true, completion: nil)
+        paso_1.image = UIImage(named: "Paso1_Listo")
+        //fotoTomada.image = UIImage(named: "fotoTomada")
+        instrucciones.image = UIImage(named: "LlenaFormulario")
+        tomarfoto.isHidden = true
+        formulario.isHidden = false
+ 
+        
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
     
 
     

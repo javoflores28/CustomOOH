@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>se requiere usar el carrete</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Se va a guardar las fotos en el album</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Se solicita acceso a la ubicación</string>
 	<key>CFBundleDevelopmentRegion</key>
