@@ -16,17 +16,20 @@ import FirebaseStorage
 import FirebaseCore
 import Firebase
 import SwiftUI
+import MapKit
 
 
 
-class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate {
+    
+    let imagenAzul: UIImage = UIImage(named: "azul")!
 
     @IBOutlet weak var imageView: UIImageView!
     
     
     @IBAction func didTapButton() {
     
-    var image: UIImage? = nil
+    //var image: UIImage? = nil
         
         
         //ImagePicker
@@ -128,6 +131,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     
     @IBOutlet weak var mapView: MapViewPlus!
+    
     weak var currentCalloutView: UIView?
     
     @IBOutlet weak var viewConstraint: NSLayoutConstraint!
@@ -137,79 +141,41 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var sideView: UIView!
     
     @IBOutlet weak var nombreUsuario: UILabel!
-  
-    private var carteles: [ParserCartelesJSON]! = []
+
+    let url1: URL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data/paletas.json")!
+    let url2: URL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data/medianos.json")!
+    let url3: URL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data/urbanos.json")!
+    let url4: URL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data/grandes.json")!
     
-    private var busquedaCarteles: [ParserCartelesJSON]! = []
+    
+    private var listaPaletas: [ParserCartelesJSON]! = []
+    private var listaMedianos: [ParserCartelesJSON]! = []
+    private var listaUrbanos: [ParserCartelesJSON]! = []
+    private var listaGrandes: [ParserCartelesJSON]! = []
+    //private var busquedaCarteles: [ParserCartelesJSON]! = []
+    
     
 
     public var annotations = [AnnotationPlus]()
     
+    public var medianos = [AnnotationPlus]()
+    
+    public var urbanos = [AnnotationPlus]()
+    
+    public var grandes = [AnnotationPlus]()
+    
     //var ref: DatabaseReference!
     //ref = Database.database().reference()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.layer.cornerRadius = 45
-
-        //retrieveTheImage2()
- 
-        //Obtener Carteles JSON
-        
-        let url: URL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data/paletas.json")!
-        var request: URLRequest = URLRequest(url: url)
-        request.httpMethod = "GET"
-   
-        NSURLConnection.sendAsynchronousRequest(request, queue: .main)  { (response,carteles,error) in
-            
-            guard let carteles = carteles else {
-                print(error!)
-                return
-            }
-            
-            let responseString:  String! = String(data: carteles, encoding: .utf8)
-            print(responseString)
-            
-            do  {
-                let  jsonDecoder: JSONDecoder = JSONDecoder()
-                self.carteles = try jsonDecoder.decode([ParserCartelesJSON].self, from: carteles)
-                self.busquedaCarteles  = self.carteles
-               
-                //print(self.carteles[0].nombre!)
-            } catch {
-                print(error)
-            }
-            
-        }
-        
-        //print(carteles.count)
-        // JSONDecoder().decode([AnnotationPlus].self, from: carteles)
-        
-        //MAPA
         
         mapView.delegate = self //Required
         
-        var annotations: [AnnotationPlus] = []
+        mapView.showsUserLocation = true
         
-        
-        
-        //annotations.append(AnnotationPlus.init(viewModel: BasicCalloutViewModel.init(title: self.carteles[0].nombre, image: UIImage(named: "cafe.png")!), coordinate: CLLocationCoordinate2DMake(19.87, -99.97)))
-        
-        annotations.append(AnnotationPlus.init(viewModel: BasicCalloutViewModel.init(title: "Cafe", image: UIImage(named: "cafe.png")!), coordinate: CLLocationCoordinate2DMake(19.395056366804322, -99.1747505026115)))
-        
-        annotations.append(AnnotationPlus.init(viewModel: BasicCalloutViewModel.init(title: "Factory", image: UIImage(named: "factory")!), coordinate: CLLocationCoordinate2DMake(50.85, 4.35)))
-
-        annotations.append(AnnotationPlus.init(viewModel: BasicCalloutViewModel.init(title: "House", image: UIImage(named: "house")!), coordinate: CLLocationCoordinate2DMake(48.85, 2.35)))
-
-        annotations.append(AnnotationPlus.init(viewModel: BasicCalloutViewModel.init(title: "Skyscraper", image: UIImage(named: "skyscraper")!), coordinate:CLLocationCoordinate2DMake(46.2039, 6.1400)))
-        
-        
-        
-        mapView.setup(withAnnotations: annotations)
-        
-        //self.mapView.anchorViewCustomizerDelegate = self
-        
-    
         //MENU
         
         menuView.layer.cornerRadius = 20
@@ -223,128 +189,215 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         //sideView.layer.shadowOffset = CGSize(width: 5, height: 5)
         
         
-        /*
-        let uid = Auth.auth().currentUser?.uid
-        Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value) { (snapshot) in
-            
-            let value = snapshot.value as? NSDictionary
-            let username = value?["username"] as? String ?? ""
-            self.nombreUsuario.text = username
-
-        }
-        */
-        
        
         viewConstraint.constant = -270
-        
-        //Ponder foto de perfil
-        
-        //INTENTO CON COLLECTION DOCUMENTS FIRESTORE:
-        
-
-        
-        
-        
-        
-        /*
-         
-        //INTENTO 1:
-         
-        let userID = Auth.auth().currentUser?.uid
-        let retrieveTheUrl = Database.database().reference().child("users").child(userID!)
-        var capatureUrl :String = ""
-        retrieveTheUrl.observeSingleEvent(of: .value) { (snapShot) in
-            if let snapShotValue = snapShot.value as? Dictionary<String,String>{
-                let url = snapShotValue["profileImageUrl"]!
-                print(url)
-                capatureUrl = url
-                print(capatureUrl)
-                
-                Storage.storage().reference(forURL: capatureUrl).downloadURL { (url, error) in
-                let data = NSData(contentsOf: url!)
-                let image = UIImage(data: data! as Data )
-                self.imageView.image = image
-                
-            }
-            }
-        }
-        */
-
-        //INTENTO 2:
-        /*
-        var imageURL = ""
-        let uid = Auth.auth().currentUser?.uid
-        let dbRef = Database.database().reference().child("users").child(uid!)
-        dbRef.observeSingleEvent(of: .value, with: { snapshot in
-           if snapshot.exists() {
-              guard let dict = snapshot.value as? [String: Any] else {
-                 return
-              }
-            imageURL = dict["profileImageUrl"] as? String ?? "https://firebasestorage.googleapis.com/v0/b/customooh.appspot.com/o/users%2F2vMGTbkwQHMg2GZXwps3RnW6IGF3?alt=media&token=77019882-a149-4cd5-97aa-650a11c1829f"
-            print(imageURL)
-            Storage.storage().reference(forURL: imageURL).downloadURL { (url, error) in
-            let data = NSData(contentsOf: url!)
-            let image = UIImage(data: data! as Data )
-            self.imageView.image = image
-            }
-           }
-        }){ (error) in
-           print(error.localizedDescription)
-        }
-        
-        */
-
-
-        //PRUEBA CON URL HARDCODEADA
-        
-        /*
-        let userID = Auth.auth().currentUser?.uid
-        let retrieveTheUrl = Database.database().reference().child("users").child(userID!)
-        var pruebaUrl = "https://firebasestorage.googleapis.com/v0/b/customooh.appspot.com/o/users%2F2vMGTbkwQHMg2GZXwps3RnW6IGF3?alt=media&token=77019882-a149-4cd5-97aa-650a11c1829f"
-        let storage = Storage.storage()
-        var reference: StorageReference!
-        reference = storage.reference(forURL:  pruebaUrl) //will be valid here.
-        reference.downloadURL { (url, error) in
-            let data2 = NSData(contentsOf: url!)
-            let image2 = UIImage(data: data2! as Data )
-            self.imageView.image = image2
-        }
-        */
-        
-        //INTENTO 3:
-        
-        /*
-        
-        let ref = Database.database(url: "346118699485-arhh7acmg6h9o2atdg58fdtlt0509e97.apps.googleusercontent.com").reference()
-        let uid = Auth.auth().currentUser?.uid
-        let usersRef = ref.child("users").child(uid!)
-
-        // only need to fetch once so use single event
-        usersRef.observeSingleEvent(of: .value, with: { snapshot in
-
-            if !snapshot.exists() { return }
-
-            //print(snapshot)
-
-            let userInfo = snapshot.value as! NSDictionary
-            print(userInfo)
-            print(userInfo["username"]!)
-            let profileUrl = userInfo["profileImageUrl"] as! String
-
-            print(profileUrl)
-            Storage.storage().reference(forURL: profileUrl).downloadURL(completion: { (url, error) in
-                let data = NSData(contentsOf: url!)
-                let image = UIImage(data: data! as Data)
-                self.imageView.image = image
-            })
-        })
-        */
         
         getUrl{(url) in
             self.getImage(Url:url)
         }
     
     }
+    
+    
+    @IBAction func botonPaletas(_ sender: Any) {
+        mapView.delegate = self
+        
+        self.mapView.removeAllAnnotations()
+        
+        var request1: URLRequest = URLRequest(url: url1)
+        request1.httpMethod = "GET"
+        
+        NSURLConnection.sendAsynchronousRequest(request1, queue: .main)  { (response,listaPaletas,error) in
+            
+            guard let listaPaletas = listaPaletas else {
+                print(error!)
+                return
+            }
+            
+            let responseString:  String! = String(data: listaPaletas, encoding: .utf8)
+            print(responseString)
+            
+            do  {
+                let  jsonDecoder: JSONDecoder = JSONDecoder()
+                self.listaPaletas = try jsonDecoder.decode([ParserCartelesJSON].self, from: listaPaletas)
+                //self.busquedaCarteles  = self.carteles
+                print("esoty adentro")
+                
+                var annotations: [AnnotationPlus] = []
+                print(self.listaPaletas.count)
+                
+                for i in 0...self.listaPaletas.count-1{
+                    //print(i)
+                    let imageURL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data" + self.listaPaletas[i].media[0].url)
+                    let data = try? Data(contentsOf: imageURL!)
+                    let image = UIImage(data: data!)
+                    
+                    annotations.append(AnnotationPlus.init(viewModel: BasicCalloutViewModel.init(title: self.listaPaletas[i].nombre, image: image!, direccion: self.listaPaletas[i].direccion ), coordinate: CLLocationCoordinate2DMake(self.listaPaletas[i].coordenadasX, self.listaPaletas[i].coordenadasY)))
+                }
+            
+                
+                self.mapView.setup(withAnnotations: annotations)
+                self.mapView.anchorViewCustomizerDelegate = self
+                
+            } catch {
+                print(error)
+            }
+            
+        }
+        
+    }
+    
+    
+    @IBAction func botonMedianos(_ sender: Any) {
+        
+        mapView.delegate = self
+        
+        self.mapView.removeAllAnnotations()
+        
+        var request2: URLRequest = URLRequest(url: url2)
+        request2.httpMethod = "GET"
+        
+        NSURLConnection.sendAsynchronousRequest(request2, queue: .main)  { (response,listaMedianos,error) in
+            
+            guard let listaMedianos = listaMedianos else {
+                print(error!)
+                return
+            }
+            
+            let responseString:  String! = String(data: listaMedianos, encoding: .utf8)
+            print(responseString)
+            
+            do  {
+                let  jsonDecoder: JSONDecoder = JSONDecoder()
+                self.listaMedianos = try jsonDecoder.decode([ParserCartelesJSON].self, from: listaMedianos)
+                print("esoty adentro")
+                print(self.listaMedianos[0].coordenadasX)
+                
+                var medianos: [AnnotationPlus] = []
+                print(self.listaMedianos.count)
+                
+                for i in 0...self.listaMedianos.count-1{
+                    //print(i)
+                    let imageURL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data" + self.listaMedianos[i].media[0].url)
+                    
+                    let data = try? Data(contentsOf: imageURL!)
+                    let image = UIImage(data: data!)
+                    medianos.append(AnnotationPlus.init(viewModel: BasicCalloutViewModel.init(title: self.listaMedianos[i].nombre, image: image!, direccion: self.listaMedianos[i].direccion), coordinate: CLLocationCoordinate2DMake(self.listaMedianos[i].coordenadasX, self.listaMedianos[i].coordenadasY)))
+                }
+
+            
+                self.mapView.setup(withAnnotations: medianos)
+                self.mapView.anchorViewCustomizerDelegate = self
+                
+            
+            } catch {
+                print(error)
+            }
+            
+        }
+        
+    }
+    
+    @IBAction func botonMobilario(_ sender: Any) {
+        
+        mapView.delegate = self
+        
+        self.mapView.removeAllAnnotations()
+
+        var request3: URLRequest = URLRequest(url: url3)
+        request3.httpMethod = "GET"
+        
+        NSURLConnection.sendAsynchronousRequest(request3, queue: .main)  { (response,listaUrbanos,error) in
+            
+            guard let listaUrbanos = listaUrbanos else {
+                print(error!)
+                return
+            }
+            
+            let responseString:  String! = String(data: listaUrbanos, encoding: .utf8)
+            print(responseString)
+            
+            do  {
+                let  jsonDecoder: JSONDecoder = JSONDecoder()
+                self.listaUrbanos = try jsonDecoder.decode([ParserCartelesJSON].self, from: listaUrbanos)
+                print("esoty adentro")
+                print(self.listaUrbanos[0].coordenadasX)
+                
+                var urbanos: [AnnotationPlus] = []
+                print(self.listaUrbanos.count)
+                
+                for i in 0...self.listaUrbanos.count-1{
+                    //print(i)
+                    let imageURL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data" + self.listaUrbanos[i].media[0].url)
+                    
+                    let data = try? Data(contentsOf: imageURL!)
+                    let image = UIImage(data: data!)
+                    urbanos.append(AnnotationPlus.init(viewModel: BasicCalloutViewModel.init(title: self.listaUrbanos[i].nombre, image: image!, direccion: self.listaUrbanos[i].direccion), coordinate: CLLocationCoordinate2DMake(self.listaUrbanos[i].coordenadasX, self.listaUrbanos[i].coordenadasY)))
+                }
+
+            
+                self.mapView.setup(withAnnotations: urbanos)
+                self.mapView.anchorViewCustomizerDelegate = self
+                
+            
+            } catch {
+                print(error)
+            }
+            
+        }
+        
+        
+    }
+    
+    @IBAction func botonGrandes(_ sender: Any) {
+        
+        mapView.delegate = self
+        
+        self.mapView.removeAllAnnotations()
+
+        var request4: URLRequest = URLRequest(url: url3)
+        request4.httpMethod = "GET"
+        
+        NSURLConnection.sendAsynchronousRequest(request4, queue: .main)  { (response,listaGrandes,error) in
+            
+            guard let listaGrandes = listaGrandes else {
+                print(error!)
+                return
+            }
+            
+            let responseString:  String! = String(data: listaGrandes, encoding: .utf8)
+            print(responseString)
+            
+            do  {
+                let  jsonDecoder: JSONDecoder = JSONDecoder()
+                self.listaGrandes = try jsonDecoder.decode([ParserCartelesJSON].self, from: listaGrandes)
+                
+                var grandes: [AnnotationPlus] = []
+                
+                for i in 0...self.listaGrandes.count-1{
+                    //print(i)
+                    let imageURL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data" + self.listaGrandes[i].media[0].url)
+                    
+                    let data = try? Data(contentsOf: imageURL!)
+                    let image = UIImage(data: data!)
+                    grandes.append(AnnotationPlus.init(viewModel: BasicCalloutViewModel.init(title: self.listaGrandes[i].nombre, image: image!, direccion: self.listaGrandes[i].direccion), coordinate: CLLocationCoordinate2DMake(self.listaGrandes[i].coordenadasX, self.listaGrandes[i].coordenadasY)))
+                }
+
+            
+                self.mapView.setup(withAnnotations: grandes)
+                self.mapView.anchorViewCustomizerDelegate = self
+                
+            
+            } catch {
+                print(error)
+            }
+            
+        }
+        
+    }
+    
+    
+    
     
     //Function to get photo of loggedin User
     func getUrl(Completion:@escaping((String)->())) {
@@ -502,7 +555,20 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 //Extensiones de MapViewPlus
 
 extension HomeViewController: MapViewPlusDelegate {
+    
+    func mapViewMedianos(_ mapViewMedianos: MapViewPlus, calloutViewFor medianosView: AnnotationViewPlus) -> CalloutViewPlus {
+         let calloutView = Bundle.main.loadNibNamed("BasicCalloutView", owner: nil, options: nil)!.first as! BasicCalloutView
+               calloutView.delegate = self
+               currentCalloutView = calloutView
+               return calloutView
+    }
+    
+    func mapViewMedianos(_ mapViewMedianos: MapViewPlus, imageFor medianos: AnnotationPlus) -> UIImage {
+        return UIImage(named: "azul")!
+    }
+    
     func mapView(_ mapView: MapViewPlus, imageFor annotation: AnnotationPlus) -> UIImage {
+        
         return UIImage(named: "basic_annotation_image")!
     }
     
@@ -521,15 +587,37 @@ extension HomeViewController: MapViewPlusDelegate {
 
 extension HomeViewController: AnchorViewCustomizerDelegate {
     func mapView(_ mapView: MapViewPlus, fillColorForAnchorOf calloutView: CalloutViewPlus) -> UIColor {
-        return currentCalloutView?.backgroundColor ?? mapView.defaultFillColorForAnchors
+        return currentCalloutView?.backgroundColor ?? UIColor.init(patternImage: imagenAzul)
     }
 }
 
 extension HomeViewController: BasicCalloutViewModelDelegate {
-    func detailButtonTapped(withTitle title: String) {
+    func detailButtonTapped(withTitle title: String, image: UIImage, direccion: String) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetallesCartel2ViewController") as? DetallesCartel2ViewController
+        
+        vc?.name = title
+        vc?.detalles2 = "Medidas de 4x5 aprox, único dueño"
+        vc?.direccion2 = direccion
+        vc?.condicion2 = "Condición: " + listaPaletas[0].condicion
+        vc?.ultimaRevision = "Última revisión: 24/04/2021"
+        //vc?.regresar2.isHidden = false
+
+        vc?.imagen = image
+   
+        vc?.modalTransitionStyle = .flipHorizontal
+        self.view.window?.rootViewController = vc
+        self.view.window?.makeKeyAndVisible()
+
+        //Si funciona -> self.present(vc!, animated:true, completion:nil)
+        //navigationController?.pushViewController(vc!, animated: true)
+             
+        
+        //Alerta popo up normal
+        /*
         let alert = UIAlertController.init(title: "\(title) tapped", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction.init(title: "OK", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
+         */
     }
 }
 

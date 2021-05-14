@@ -122,6 +122,28 @@ extension DefaultCalloutView: CalloutViewPlus {
 }
 
 extension DefaultCalloutView: CalloutViewCustomizerDelegate {
+    public func mapViewMedianos(_ mapViewMedianos: MapViewPlus, centerForCalloutViewOf medianosView: AnnotationViewPlus) -> CalloutViewPlusCenter {
+        return .defaultCenter
+    }
+    
+    public func mapVieMedianos(_ mapViewMedianos: MapViewPlus, boundsForCalloutViewOf medianosView: AnnotationViewPlus) -> CalloutViewPlusBound {
+        let titleExpectedWidth = labelTitle.intrinsicContentSize.width
+        let subTitleExpectedWidth = labelSubtitle.intrinsicContentSize.width
+        
+        let titleWidthChange = labelTitle.bounds.size.width - titleExpectedWidth
+        let subtitleWidthChange = labelSubtitle.bounds.size.width - subTitleExpectedWidth
+        
+        let mapViewWidth = mapViewMedianos.bounds.size.width
+        let newCalloutWidth = bounds.size.width - (titleWidthChange < subtitleWidthChange ? titleWidthChange : subtitleWidthChange)
+        
+        //Don't let it grow too big.
+        guard newCalloutWidth < mapViewWidth - (mapViewMedianos.calloutViewHorizontalInset * 2) else {
+            return .defaultBounds
+        }
+        
+        return .customBounds(CGRect(x: 0 , y: 0, width: newCalloutWidth, height: bounds.size.height))
+    }
+    
 	public func mapView(_ mapView: MapViewPlus, centerForCalloutViewOf annotationView: AnnotationViewPlus) -> CalloutViewPlusCenter {
 		return .defaultCenter
 	}

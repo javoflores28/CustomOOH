@@ -28,12 +28,15 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     
     @IBOutlet weak var imageUrlTextField: UITextField!
+    @IBOutlet weak var fondoFoto: UIImageView!
     
     var image: UIImage? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
+        
+        fondoFoto.layer.cornerRadius = 50
         
         setupUI()
 

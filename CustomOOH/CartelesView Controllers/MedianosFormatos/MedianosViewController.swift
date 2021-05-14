@@ -109,10 +109,11 @@ class MedianosViewController: UIViewController, UICollectionViewDataSource, UICo
                  vc?.condicion2 = "Condición: " + self.carteles[indexPath.item].condicion
                  vc?.ultimaRevision = "Última revisión: " + self.carteles[indexPath.item].revisiones[0].fecha_revision
                  vc?.imagen = carteles[indexPath.item].media[0].url
-                   
-               
+
                  self.navigationController?.pushViewController(vc!, animated: true)
-                 
+            
+            //vc?.regresar2.isHidden = true
+
          }
 
        

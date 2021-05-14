@@ -26,6 +26,6 @@ class ParserCartelesJSON: Decodable {
     public var fecha_creacion: String!
     public var condicion: String!
     
-    //public var coordenadasX: Number!
-    //public var coordenadasY: Number!
+    public var coordenadasX: Double!
+    public var coordenadasY: Double!
 }

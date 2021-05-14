@@ -12,9 +12,11 @@ import MapViewPlus
 class BasicCalloutViewModel: CalloutViewModel {
 	var title: String
 	var image: UIImage
+    var direccion: String
 	
-	init(title: String, image: UIImage) {
+    init(title: String, image: UIImage, direccion: String) {
 		self.title = title
 		self.image = image
+        self.direccion = direccion
 	}
 }

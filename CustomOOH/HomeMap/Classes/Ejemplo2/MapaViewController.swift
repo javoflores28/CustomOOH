@@ -10,7 +10,7 @@ import CoreLocation
 import MapViewPlus
 
 class MapaViewController: UIViewController {
-    
+    /*
 
     @IBOutlet weak var mapView: MapViewPlus!
     weak var currentCalloutView: UIView?
@@ -24,13 +24,13 @@ class MapaViewController: UIViewController {
         
         var annotations: [AnnotationPlus] = []
         
-        annotations.append(AnnotationPlus.init(viewModel: BasicCalloutViewModel.init(title: "Cafe", image: UIImage(named: "cafe.png")!), coordinate: CLLocationCoordinate2DMake(50.11, 8.68)))
+        annotations.append(AnnotationPlus.init(viewModel: BasicCalloutViewModel.init(title: "Cafe", image: UIImage(named: "cafe.png")!, direccion: ""), coordinate: CLLocationCoordinate2DMake(50.11, 8.68)))
         
-        annotations.append(AnnotationPlus.init(viewModel: BasicCalloutViewModel.init(title: "Factory", image: UIImage(named: "factory.png")!), coordinate: CLLocationCoordinate2DMake(50.85, 4.35)))
+        annotations.append(AnnotationPlus.init(viewModel: BasicCalloutViewModel.init(title: "Factory", image: UIImage(named: "factory.png")!,direccion: ""), coordinate: CLLocationCoordinate2DMake(50.85, 4.35)))
 
-        annotations.append(AnnotationPlus.init(viewModel: BasicCalloutViewModel.init(title: "House", image: UIImage(named: "house.png")!), coordinate: CLLocationCoordinate2DMake(48.85, 2.35)))
+        annotations.append(AnnotationPlus.init(viewModel: BasicCalloutViewModel.init(title: "House", image: UIImage(named: "house.png")!, direccion: ""), coordinate: CLLocationCoordinate2DMake(48.85, 2.35)))
 
-        annotations.append(AnnotationPlus.init(viewModel: BasicCalloutViewModel.init(title: "Skyscraper", image: UIImage(named: "skyscraper.png")!), coordinate:CLLocationCoordinate2DMake(46.2039, 6.1400)))
+        annotations.append(AnnotationPlus.init(viewModel: BasicCalloutViewModel.init(title: "Skyscraper", image: UIImage(named: "skyscraper.png")!, direccion: ""), coordinate:CLLocationCoordinate2DMake(46.2039, 6.1400)))
         
         
         mapView.setup(withAnnotations: annotations)
@@ -64,9 +64,10 @@ extension MapaViewController: AnchorViewCustomizerDelegate {
 }
 
 extension MapaViewController: BasicCalloutViewModelDelegate {
-    func detailButtonTapped(withTitle title: String) {
+    func detailButtonTapped(withTitle title: String, image: UIImage, direccion: String) {
         let alert = UIAlertController.init(title: "\(title) tapped", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction.init(title: "OK", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+ */
 }

@@ -39,6 +39,7 @@ class PaletasViewController: UIViewController, UICollectionViewDataSource, UICol
         
         let url: URL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data/paletas.json")!
         var request: URLRequest = URLRequest(url: url)
+        print(url)
         request.httpMethod = "GET"
         
         //if using POST
@@ -109,6 +110,7 @@ class PaletasViewController: UIViewController, UICollectionViewDataSource, UICol
         //Coloar imagenes del JSON
         if let imageURL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data" + carteles[indexPath.item].media[0].url) {
             DispatchQueue.global().async {
+                
                 let data = try? Data(contentsOf: imageURL)
                 if let data = data {
                     let image = UIImage(data: data)

@@ -21,7 +21,7 @@ class GrandesCollectionViewCell: UICollectionViewCell {
     public var estado: String!
     public var direccion: String!
     public var detalles: String!
-    //public var coordenadasX: String!
+    //public var coordenadasX: Double!
     //public var coordenadasY: String!
     
     

@@ -10,7 +10,7 @@ import UIKit
 import MapViewPlus
 
 public protocol BasicCalloutViewModelDelegate: class {
-	func detailButtonTapped(withTitle title: String)
+    func detailButtonTapped(withTitle title: String, image: UIImage, direccion: String)
 }
 
 class BasicCalloutView: UIView {
@@ -19,6 +19,7 @@ class BasicCalloutView: UIView {
 	
 
 	
+    @IBOutlet weak var direccion: UILabel!
     
     @IBOutlet weak var label: UILabel!
     
@@ -29,7 +30,7 @@ class BasicCalloutView: UIView {
     @IBOutlet var button: UIButton!
     
     @IBAction func buttonTouchDown(_ sender: Any) {
-        delegate?.detailButtonTapped(withTitle: label.text!)
+        delegate?.detailButtonTapped(withTitle: label.text!, image: imageView.image!, direccion: direccion.text!)
     }
 }
     
@@ -39,5 +40,6 @@ extension BasicCalloutView: CalloutViewPlus{
 		
 		label.text = viewModel.title
 		imageView.image = viewModel.image
+        direccion.text =  viewModel.direccion
 	}
 }

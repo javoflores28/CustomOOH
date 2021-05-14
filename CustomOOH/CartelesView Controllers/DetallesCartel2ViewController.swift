@@ -1,8 +1,8 @@
 //
-//  DetallesCartelViewController.swift
+//  DetallesCartel2ViewController.swift
 //  CustomOOH
 //
-//  Created by Javier Flores on 14/04/21.
+//  Created by Javier Flores on 13/05/21.
 //  Copyright © 2021 mx.itesm.A01651678. All rights reserved.
 //
 
@@ -11,47 +11,34 @@ import CoreML
 import Vision
 @available(iOS 11.0, *)
 
-class DetallesCartelViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class DetallesCartel2ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    
     @IBOutlet weak var nombreCartel: UILabel!
-    
     @IBOutlet weak var direccion: UILabel!
-    
     @IBOutlet weak var condicion: UILabel!
-    
     @IBOutlet weak var fechaUltRegistro: UILabel!
-    
     @IBOutlet weak var img: UIImageView!
-    
     @IBOutlet weak var detalles: UILabel!
     
     //Imagenes para cambiar de Paso
     @IBOutlet weak var instrucciones: UIImageView!
-    
     @IBOutlet weak var paso_1: UIImageView!
-    
     @IBOutlet weak var paso_2: UIImageView!
-    
     @IBOutlet weak var paso_3: UIImageView!
-    
     @IBOutlet weak var fotoTomada: UIImageView!
-    
     @IBOutlet weak var registrar: UIImageView!
     
-    //Botones dinámicos que cambian 
     
-    @IBOutlet weak var foto: UIButton!
-    
+    //Botones dinámicos que cambian
     @IBOutlet weak var formulario: UIButton!
-    
     @IBOutlet weak var registrarEvaluacion: UIButton!
-    
     @IBOutlet weak var tomarfoto: UIButton!
     
     private let miPicker = UIImagePickerController()
     
     @IBOutlet weak var condicionImagen: UILabel!
-    
+
     @IBOutlet weak var regresar1: UIButton!
     
     @IBOutlet weak var analizarFoto: UIButton!
@@ -71,13 +58,12 @@ class DetallesCartelViewController: UIViewController, UIImagePickerControllerDel
     
     var ultimaRevision = ""
     
-    var imagen = ""
+    var imagen: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         miPicker.delegate = self
-        
         
         //Paso1.text = "Falta"
         
@@ -87,10 +73,11 @@ class DetallesCartelViewController: UIViewController, UIImagePickerControllerDel
         fechaUltRegistro.text = ultimaRevision
         detalles.text = detalles2
         
+        img.image = imagen
+        
         formulario.isHidden = true
         registrarEvaluacion.isHidden = true
         analizarFoto.isHidden = true
-
         
         /*
         if  Paso1.text == "Listo" {
@@ -105,17 +92,6 @@ class DetallesCartelViewController: UIViewController, UIImagePickerControllerDel
 
         */
         
-        if let imageURL = URL(string: "http://martinmolina.com.mx/202111/equipo6/data" + imagen) {
-                   DispatchQueue.global().async {
-                       let data = try? Data(contentsOf: imageURL)
-                       if let data = data {
-                           let image = UIImage(data: data)
-                           DispatchQueue.main.async {
-                            self.img.image = image
-                           }
-                       }
-                   }
-               }
         
         //self.navigationController?.navigationBar.prefersLargeTitles = true
         
@@ -123,42 +99,10 @@ class DetallesCartelViewController: UIViewController, UIImagePickerControllerDel
         
         
     }
-     
-    @IBAction func tomarFoto(_ sender: Any) {
-        
-        let tomarFotoViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.tomarFotoViewController) as? TomaFotoViewController
-                    
-        tomarFotoViewController?.modalPresentationStyle = .fullScreen
-        
-        //Haz los cambios pertientes en los campos para validar que se tomo la foto
-        tomarFotoViewController?.completionHnadler1 = { text in
-            self.paso_1.image = UIImage(named: text!)
-        }
-        tomarFotoViewController?.completionHnadler2 = { text in
-            self.fotoTomada.image = UIImage(named: text!)
-        }
-        tomarFotoViewController?.completionHnadler3 = { text in
-            self.instrucciones.image = UIImage(named: text!)
-        }
-        tomarFotoViewController?.completionHnadler4 = { Bool in
-            self.foto.isHidden = Bool!
-        }
-        
-        tomarFotoViewController?.completionHnadler5 = { Bool in
-            self.formulario.isHidden = Bool!
-        }
- 
-        present(tomarFotoViewController!, animated: true)
-        
-        //self.view.window?.rootViewController = tomarFotoViewController
-        //self.view.window?.makeKeyAndVisible()
-     
-    }
-    
-    
+  
     @IBAction func llenarFormulario(_ sender: Any) {
         
-        let llenarForumariViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.llenarForumariViewController) as? LlenarFormularioViewController
+        let llenarForumariViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.llenarForumario2ViewController) as? llenarForumario2ViewController
         
         llenarForumariViewController?.modalPresentationStyle = .overCurrentContext
         llenarForumariViewController?.view.backgroundColor = .clear
@@ -189,8 +133,7 @@ class DetallesCartelViewController: UIViewController, UIImagePickerControllerDel
     
 
     
-    
-    @IBAction func ejecutarML() {
+        @IBAction func ejecutarML() {
         //instanciar el modelo de la red neuronal
         let modelFile = MLcarteles()
         let model = try! VNCoreMLModel(for: modelFile.model)
@@ -221,7 +164,6 @@ class DetallesCartelViewController: UIViewController, UIImagePickerControllerDel
         condicionImagen.text = resultado
     }
     
-    
     @IBAction func album() {
         miPicker.sourceType = UIImagePickerController.SourceType.photoLibrary
         present(miPicker, animated: true, completion: nil)
@@ -236,7 +178,6 @@ class DetallesCartelViewController: UIViewController, UIImagePickerControllerDel
         tomarfoto.isHidden = true
         formulario.isHidden = false
         analizarFoto.isHidden = false
-    
  
         
         
@@ -247,15 +188,19 @@ class DetallesCartelViewController: UIViewController, UIImagePickerControllerDel
     }
     
 
-    
-    @IBAction func regresar(_ sender: Any) {
+    @IBAction func regresar1(_ sender: Any) {
+         let vc = storyboard?.instantiateViewController(withIdentifier: "HomeMap") as? HomeViewController
         
-        _ = navigationController?.popViewController(animated: true)
-
+        vc?.modalTransitionStyle = .flipHorizontal
+        self.view.window?.rootViewController = vc
+        self.view.window?.makeKeyAndVisible()
+        //self.present(vc!, animated:true, completion:nil)
     }
     
     @IBAction func registrar(_ sender: Any) {
-        _ = navigationController?.popViewController(animated: true)
+         let vc = storyboard?.instantiateViewController(withIdentifier: "HomeMap") as? HomeViewController
+        
+        self.present(vc!, animated:true, completion:nil)
     }
 
 
