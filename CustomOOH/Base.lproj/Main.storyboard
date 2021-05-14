@@ -274,11 +274,6 @@
                             <constraint firstItem="Waf-Gq-wS4" firstAttribute="top" secondItem="fuW-b3-fKM" secondAttribute="top" id="uPj-Yi-1p4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fuW-b3-fKM"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Waf-Gq-wS4"/>
-                            </mask>
-                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="78q-dJ-fNh" appends="YES" id="vlc-Mi-72E"/>
                         </connections>
