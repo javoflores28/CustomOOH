@@ -192,7 +192,7 @@ class DetallesCartelViewController: UIViewController, UIImagePickerControllerDel
     
     @IBAction func ejecutarML() {
         //instanciar el modelo de la red neuronal
-        let modelFile = MLcarteles()
+        let modelFile = MLcarteles2()
         let model = try! VNCoreMLModel(for: modelFile.model)
         //Convertir la imagen obtenida a CIImage
         let imagenCI = CIImage(image: fotoTomada.image!)

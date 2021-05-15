@@ -174,6 +174,17 @@
                                     <action selector="botonGrandes:" destination="EAq-GR-5MD" eventType="touchUpInside" id="oLz-7Q-U7u"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HuH-Zn-kfu">
+                                <rect key="frame" x="233" y="50" width="131" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeMapType:" destination="EAq-GR-5MD" eventType="valueChanged" id="di1-9j-P8W"/>
+                                </connections>
+                            </segmentedControl>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Waf-Gq-wS4">
                                 <rect key="frame" x="0.0" y="0.0" width="265" height="667"/>
                                 <subviews>
@@ -505,11 +516,6 @@
                                 <connections>
                                     <segue destination="Tb5-7D-ZfH" kind="show" id="H3V-WL-L8g"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrM-5U-fhP">
-                                <rect key="frame" x="164" y="597" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

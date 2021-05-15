@@ -20,18 +20,27 @@ import MapKit
 
 
 
-class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate {
+class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
     let imagenAzul: UIImage = UIImage(named: "azul")!
 
     @IBOutlet weak var imageView: UIImageView!
     
+
+    @IBAction func changeMapType(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            mapView.mapType = .standard
+        } else {
+            mapView.mapType = .satellite
+        }
+    }
+    
+    var locationManager = CLLocationManager()
     
     @IBAction func didTapButton() {
     
     //var image: UIImage? = nil
-        
-        
+
         //ImagePicker
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
@@ -170,6 +179,25 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        locationManager.requestWhenInUseAuthorization()
+        
+        let regionRadius: CLLocationDistance = 5000
+        
+        //mapView.setRegion(, animated: true)
+        
+        guard let coordinate = locationManager.location?.coordinate else {return}
+        let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
+        
+        
+        mapView.showsUserLocation = true
+        mapView.showsScale = true
+         
+
         imageView.layer.cornerRadius = 45
         
         mapView.delegate = self //Required
@@ -197,6 +225,27 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+           super.viewDidAppear(animated)
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.distanceFilter = kCLDistanceFilterNone
+            locationManager.startUpdatingLocation()
+           
+                  
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+            mapView.showsUserLocation = true
+        } else {
+            locationManager.stopUpdatingLocation()
+            mapView.showsUserLocation = false
+        }
+    }
+       
     
     
     @IBAction func botonPaletas(_ sender: Any) {
@@ -598,7 +647,8 @@ extension HomeViewController: BasicCalloutViewModelDelegate {
         vc?.name = title
         vc?.detalles2 = "Medidas de 4x5 aprox, único dueño"
         vc?.direccion2 = direccion
-        vc?.condicion2 = "Condición: " + listaPaletas[0].condicion
+        vc?.condicion2 = "Condición: 90%"
+            //listaPaletas[0].condicion
         vc?.ultimaRevision = "Última revisión: 24/04/2021"
         //vc?.regresar2.isHidden = false
 
